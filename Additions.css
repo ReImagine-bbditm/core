@@ -346,3 +346,68 @@ section { scroll-margin-top: 80px; }
 
   #nav-links a { display: block; padding: 1rem 1.25rem; }
 }
+@media (max-width: 1000px) {
+  #Team .container { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--team-gap, 40px); }
+  #Team .container > .box,
+  #Team .container > .box:last-child:nth-child(3n+1),
+  #Team .container > .box:nth-last-child(2):nth-child(3n+1) { grid-column: auto; }
+
+  /* you have 9 members, so the last card would sit alone on the left: centre it */
+  #Team .container > .box:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - var(--team-gap, 40px)) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  #Team .container {
+    --team-gap: 12px;
+    gap: var(--team-gap);
+    padding-inline: 12px;
+  }
+  #Team .container > .box { height: auto; }
+  #Team .card-image-container { height: auto; aspect-ratio: 4 / 5; }
+  #Team .box .intro { margin: 0; padding: .75rem .75rem 1rem; }
+  #Team .card-name { font-size: 1rem; }
+  #Team .card-designation { font-size: .8rem; }
+  #Team .card-linkedin { margin-top: 6px; }
+  #Team .card-linkedin svg { width: 20px; height: 20px; }
+}
+
+@media (max-width: 640px) {
+  #Services .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding-inline: 12px;
+    margin-inline: 0;
+  }
+  #Services .box {
+    width: auto;
+    max-width: none;
+    height: auto;
+    min-height: 190px;
+    margin: 0;
+    padding: 1rem .5rem;
+    justify-content: center;
+  }
+  #Services .services-icon { top: 0; width: 64px; height: 64px; }
+  #Services .services-content { top: 0; margin: 8px 0 0; padding: 0 6px; }
+  #Services .services-content h3 { font-size: 1rem; }
+  #Services .services-content p { font-size: .8rem; }
+}
+@media (max-width: 640px) {
+  .event-card.side .event-card-img {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 4 / 3;   /* taller box, shows much more of the photo */
+    min-height: 0;
+  }
+  .event-card.side {
+    min-height: 0;
+  }
+  .event-card.side .event-card-img img {
+    object-position: center 30%;   /* faces sit in the upper part of group shots */
+  }
+}
