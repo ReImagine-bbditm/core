@@ -16,54 +16,20 @@ a.box:hover, a.box:focus-visible { border-color: var(--accent); transform: trans
   overflow: hidden;
 }
 
-.section-note { text-align: center; color: var(--text-secondary); margin: -1rem auto 1rem; padding: 0 1rem; }
-.section-note.left { text-align: left; margin: 0 0 2rem; padding: 0; }
+.section-note { color: var(--text-secondary); text-align: left; margin: 0 0 2rem; }
 
 /* =========================================================
-   Events (old filter list, kept in case it is still used)
+   Events
    ========================================================= */
 .events-wrap { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
 .events-sub { font-family: 'Fraunces', serif; font-size: 1.5rem; margin-bottom: .5rem; }
-#filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 1.5rem; }
-#filters button {
-  background: var(--card-bg); color: var(--text-secondary);
-  border: 1px solid var(--border); border-radius: 999px;
-  padding: .4rem 1rem; font: inherit; font-size: .9rem; cursor: pointer;
-}
-#filters button:hover { border-color: var(--accent); }
-#filters button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.past-item {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;
-}
-.past-item[hidden], #no-events[hidden] { display: none; }
-.past-item h4 { font-size: 1.15rem; margin-bottom: .2rem; }
-.past-item .meta { color: var(--accent); font-size: .9rem; margin-bottom: .5rem; }
-.past-item p { color: var(--text-secondary); line-height: 1.6; }
-#no-events { color: var(--text-secondary); padding: 1rem 0; }
-
-/* Expandable past events */
-details.past-item { padding: 0; }
-details.past-item summary { list-style: none; cursor: pointer; padding: 1.25rem 3.25rem 1.25rem 1.5rem; position: relative; border-radius: 14px; }
-details.past-item summary::-webkit-details-marker { display: none; }
-details.past-item summary::after { content: "+"; position: absolute; right: 1.5rem; top: 1.1rem; font-size: 1.6rem; line-height: 1; color: var(--accent); }
-details.past-item[open] summary::after { content: "\2212"; }
-details.past-item summary:hover h4 { color: var(--accent); }
-details.past-item summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-details.past-item .meta { display: block; margin-bottom: 0; }
-.detail { padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--border); }
-.detail p { margin-top: 1rem; }
-.detail h5 { font-size: .95rem; margin: 1.25rem 0 .5rem; }
-.detail ul { margin-left: 1.2rem; color: var(--text-secondary); line-height: 1.6; }
-.detail li { margin-bottom: .4rem; }
 
 /* =========================================================
    Placeholders, buttons, misc
    ========================================================= */
 .avatar, .tile { display: grid; place-items: center; }
 .avatar { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: var(--accent); background: var(--accent-dim); }
-.tile { color: var(--text-secondary); font-size: .9rem; border-bottom: 0; }
-.card-image-container.avatar.ph { display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; background: rgba(255,255,255,.06); }
+.card-image-container.avatar.ph { font-size: 1.8rem; background: rgba(255,255,255,.06); }
 
 /* .btn rules were written for <button>. These make links with .btn look the same */
 a.btn { display: inline-block; text-align: center; text-decoration: none; }
@@ -205,9 +171,6 @@ section { scroll-margin-top: 80px; }
 .event-card.side .event-card-img img {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .event-card.side .event-card-body { justify-content: center; }
 
@@ -247,7 +210,7 @@ section { scroll-margin-top: 80px; }
   height: auto;
 }
 .team-grid .card-image-container { height: auto; aspect-ratio: 4 / 5; }
-.team-grid .card-image-container img { object-fit: cover; object-position: center 20%; }
+.team-grid .card-image-container img { object-position: center 20%; }
 .team-grid .box .intro { padding-bottom: 1.25rem; }
 .team-grid .card-linkedin { margin-top: 16px; }
 
@@ -269,11 +232,6 @@ section { scroll-margin-top: 80px; }
     width: calc((100% - var(--team-gap)) / 2);
   }
 }
-
-/* =========================================================
-   Gallery
-   ========================================================= */
-#Gallery .card-image-container img { object-fit: cover; }
 
 /* =========================================================
    Reveal on scroll (classes added by app.js)
@@ -332,17 +290,12 @@ section { scroll-margin-top: 80px; }
   .nav-buttons { flex-direction: column; align-items: stretch; gap: .75rem; }
 
   h2.intro { font-size: 1.6rem; letter-spacing: 2px; margin-top: 3rem; }
-  h3.intro { font-size: 1.6rem; letter-spacing: 2px; margin-top: 3rem; }
 
   /* generic cards: 300px + 60px margin overflowed phones */
   .box { margin: 12px; max-width: calc(100% - 24px); }
 
   .events-wrap { padding: 0 1rem; }
   footer { padding: 3rem 1rem 0; }
-
-  /* the no-hero pages keep their smaller heading gap */
-  #Past-Events h2.intro,
-  #Past-Members h2.intro { margin-top: 2rem; }
 
   /* Team: 2 per row, compact cards */
   .team-grid { --team-gap: 12px; padding-inline: 12px; }
@@ -390,4 +343,22 @@ section { scroll-margin-top: 80px; }
     margin: 0;
   }
   #Gallery .card-image-container { height: 100%; }
+}
+/* Past members: original fixed-size cards on desktop.
+   Tablets and phones fall through to the normal team-grid layout. */
+@media (min-width: 1001px) {
+  .team-grid.compact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  .team-grid.compact > .box {
+    width: 300px;
+    height: 350px;
+  }
+  .team-grid.compact .card-image-container {
+    height: 220px;
+    aspect-ratio: auto;
+  }
 }
