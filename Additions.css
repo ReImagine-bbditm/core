@@ -1,6 +1,8 @@
 /* Load after style.css. Only new rules; nothing in style.css needs changing. */
 
-/* Six cards, three per row */
+/* =========================================================
+   Services
+   ========================================================= */
 #Services .container { max-width: 1060px; margin-left: auto; margin-right: auto; }
 a.box { text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
 a.box:hover, a.box:focus-visible { border-color: var(--accent); transform: translateY(-3px); }
@@ -17,7 +19,9 @@ a.box:hover, a.box:focus-visible { border-color: var(--accent); transform: trans
 .section-note { text-align: center; color: var(--text-secondary); margin: -1rem auto 1rem; padding: 0 1rem; }
 .section-note.left { text-align: left; margin: 0 0 2rem; padding: 0; }
 
-/* Events */
+/* =========================================================
+   Events (old filter list, kept in case it is still used)
+   ========================================================= */
 .events-wrap { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
 .events-sub { font-family: 'Fraunces', serif; font-size: 1.5rem; margin-bottom: .5rem; }
 #filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 1.5rem; }
@@ -38,14 +42,6 @@ a.box:hover, a.box:focus-visible { border-color: var(--accent); transform: trans
 .past-item p { color: var(--text-secondary); line-height: 1.6; }
 #no-events { color: var(--text-secondary); padding: 1rem 0; }
 
-/* Team initials and gallery placeholders */
-.avatar, .tile { display: grid; place-items: center; }
-.avatar { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: var(--accent); background: var(--accent-dim); }
-.tile { color: var(--text-secondary); font-size: .9rem; border-bottom: 0; }
-
-/* Your .btn rules were written for <button>. These make links with .btn look the same */
-a.btn { display: inline-block; text-align: center; text-decoration: none; }
-
 /* Expandable past events */
 details.past-item { padding: 0; }
 details.past-item summary { list-style: none; cursor: pointer; padding: 1.25rem 3.25rem 1.25rem 1.5rem; position: relative; border-radius: 14px; }
@@ -61,7 +57,31 @@ details.past-item .meta { display: block; margin-bottom: 0; }
 .detail ul { margin-left: 1.2rem; color: var(--text-secondary); line-height: 1.6; }
 .detail li { margin-bottom: .4rem; }
 
-/* Hero: star animation instead of a photo */
+/* =========================================================
+   Placeholders, buttons, misc
+   ========================================================= */
+.avatar, .tile { display: grid; place-items: center; }
+.avatar { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: var(--accent); background: var(--accent-dim); }
+.tile { color: var(--text-secondary); font-size: .9rem; border-bottom: 0; }
+.card-image-container.avatar.ph { display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; background: rgba(255,255,255,.06); }
+
+/* .btn rules were written for <button>. These make links with .btn look the same */
+a.btn { display: inline-block; text-align: center; text-decoration: none; }
+
+.logo a { text-decoration: none; color: white; }
+
+.section-cta { display: flex; justify-content: center; margin-top: 32px; }
+
+.year-heading { text-align: center; margin: 56px 0 24px; scroll-margin-top: 100px; }
+.year-heading:first-of-type { margin-top: 8px; }
+
+.card-linkedin { display: inline-flex; margin-top: 12px; color: #70B5F9; transition: opacity .2s; }
+.card-linkedin:hover { opacity: .75; }
+.card-linkedin:focus-visible { outline: 2px solid #70B5F9; outline-offset: 3px; border-radius: 4px; }
+
+/* =========================================================
+   Hero: star animation
+   ========================================================= */
 #hero-section {
   background:
     radial-gradient(circle at 25% 30%, black, transparent 45%),
@@ -83,9 +103,10 @@ html.stars-js [data-stars-fade] {
   transition: opacity .8s ease, transform .8s ease;
 }
 html.stars-revealed [data-stars-fade] { opacity: 1; transform: none; }
-/* ===== Responsive / mobile (keep at the very bottom) ===== */
 
-/* hamburger button: hidden on desktop */
+/* =========================================================
+   Mobile nav button + fluid type
+   ========================================================= */
 .nav-toggle {
   display: none;
   background: none;
@@ -100,23 +121,202 @@ html.stars-revealed [data-stars-fade] { opacity: 1; transform: none; }
 /* fixed header no longer covers section titles after clicking a nav link */
 section { scroll-margin-top: 80px; }
 
-/* fluid text */
 .hero-content h1 { font-size: clamp(1.9rem, 6vw, 2.75rem); }
 .hero-content p  { font-size: clamp(1rem, 2.4vw, 1.1rem); }
 
-/* tablets and below: hamburger menu */
+/* pages with no hero: push content below the fixed header */
+#Past-Events,
+#Past-Members { padding-top: 70px; }
+#Past-Events h2.intro,
+#Past-Members h2.intro { margin-top: 2rem; }
+
+/* =========================================================
+   Event cards (home page "Recent events")
+   ========================================================= */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 16px 0 28px;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.event-card:hover { border-color: var(--accent, #ff5a36); }
+
+.event-card-img {
+  aspect-ratio: 16 / 10;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  overflow: hidden;
+}
+.event-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.event-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 20px 22px;
+}
+.event-card-body h4 { margin: 0; font-size: 1.15rem; }
+.event-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.event-card-meta .date { color: var(--accent, #ff5a36); font-weight: 600; }
+.event-card-meta .venue { opacity: 0.75; }
+.event-card-summary {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* side-by-side card: photo left, text right */
+.event-card.side { flex-direction: row; min-height: 210px; }
+.event-card.side .event-card-img {
+  flex: 0 0 42%;
+  aspect-ratio: auto;
+  min-height: 150px;
+  position: relative;
+}
+.event-card.side .event-card-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.event-card.side .event-card-body { justify-content: center; }
+
+@media (max-width: 800px) {
+  .event-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .event-card.side { flex-direction: column; min-height: 0; }
+  .event-card.side .event-card-img {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+  .event-card.side .event-card-img img { object-position: center 30%; }
+}
+
+/* =========================================================
+   Team grid (index.html #Team and previousTeams.html)
+   Needs class="container team-grid" on the card container.
+   ========================================================= */
+.team-grid {
+  --team-gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--team-gap);
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.team-grid > .box {
+  grid-column: span 2;            /* 3 per row */
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  height: auto;
+}
+.team-grid .card-image-container { height: auto; aspect-ratio: 4 / 5; }
+.team-grid .card-image-container img { object-fit: cover; object-position: center 20%; }
+.team-grid .box .intro { padding-bottom: 1.25rem; }
+.team-grid .card-linkedin { margin-top: 16px; }
+
+/* centre a short last row */
+.team-grid > .box:last-child:nth-child(3n+1) { grid-column: 3 / span 2; }
+.team-grid > .box:nth-last-child(2):nth-child(3n+1) { grid-column: 2 / span 2; }
+
+/* tablets and phones: 2 per row */
+@media (max-width: 1000px) {
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team-grid > .box,
+  .team-grid > .box:last-child:nth-child(3n+1),
+  .team-grid > .box:nth-last-child(2):nth-child(3n+1) { grid-column: auto; }
+
+  /* odd count: centre the lonely last card */
+  .team-grid > .box:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - var(--team-gap)) / 2);
+  }
+}
+
+/* =========================================================
+   Gallery
+   ========================================================= */
+#Gallery .card-image-container img { object-fit: cover; }
+
+/* =========================================================
+   Reveal on scroll (classes added by app.js)
+   ========================================================= */
+.js .reveal {
+  opacity: 0;
+  translate: 0 24px;
+  transition: opacity 0.6s ease, translate 0.6s ease;
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.in { opacity: 1; translate: 0 0; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; translate: none; transition: none; }
+}
+
+/* =========================================================
+   Responsive (keep at the very bottom)
+   ========================================================= */
+
+/* tablets and below: animated hamburger menu */
 @media (max-width: 900px) {
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block; margin-left: auto; }
+
   #nav-links {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
+    display: flex;                /* always rendered so it can animate */
     flex-direction: column;
     column-gap: 0;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
     background: #0e0e10;
     border-bottom: 1px solid var(--border);
+
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: clip-path .35s ease, opacity .25s ease, visibility 0s linear .35s;
   }
-  #nav-links.open { display: flex; }
+  #nav-links.open {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    visibility: visible;
+    transition: clip-path .35s ease, opacity .25s ease, visibility 0s;
+  }
   #nav-links a { display: block; padding: 1rem 1.25rem; }
 }
 
@@ -132,250 +332,27 @@ section { scroll-margin-top: 80px; }
   .nav-buttons { flex-direction: column; align-items: stretch; gap: .75rem; }
 
   h2.intro { font-size: 1.6rem; letter-spacing: 2px; margin-top: 3rem; }
-    h3.intro { font-size: 1.6rem; letter-spacing: 2px; margin-top: 3rem; }
+  h3.intro { font-size: 1.6rem; letter-spacing: 2px; margin-top: 3rem; }
 
-  /* cards: 300px + 60px margin overflowed phones (the gallery was 330px + 60px) */
+  /* generic cards: 300px + 60px margin overflowed phones */
   .box { margin: 12px; max-width: calc(100% - 24px); }
 
   .events-wrap { padding: 0 1rem; }
   footer { padding: 3rem 1rem 0; }
-}
-.event-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
-  gap: 24px;
-  margin: 16px 0 28px;
-}
 
-.event-card {
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-.event-card:hover {
-  border-color: var(--accent, #ff5a36);
-}
+  /* the no-hero pages keep their smaller heading gap */
+  #Past-Events h2.intro,
+  #Past-Members h2.intro { margin-top: 2rem; }
 
-.event-card-img {
-  aspect-ratio: 16 / 10;
-  display: grid;
-  place-items: center;
-  background: rgba(255, 255, 255, 0.06);
-  font-size: 0.9rem;
-  opacity: 0.8;
-  overflow: hidden;
-}
-.event-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+  /* Team: 2 per row, compact cards */
+  .team-grid { --team-gap: 12px; padding-inline: 12px; }
+  .team-grid .box .intro { margin: 0; padding: .75rem .75rem 1rem; }
+  .team-grid .card-name { font-size: 1rem; }
+  .team-grid .card-designation { font-size: .8rem; }
+  .team-grid .card-linkedin { margin-top: 6px; }
+  .team-grid .card-linkedin svg { width: 20px; height: 20px; }
 
-.event-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 18px 20px 22px;
-}
-.event-card-body h4 {
-  margin: 0;
-  font-size: 1.15rem;
-}
-.event-card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
-  margin: 0;
-  font-size: 0.9rem;
-}
-.event-card-meta .date {
-  color: var(--accent, #ff5a36);
-  font-weight: 600;
-}
-.event-card-meta .venue {
-  opacity: 0.75;
-}
-.event-card-summary {
-  margin: 0;
-  font-size: 0.95rem;
-  opacity: 0.85;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.event-card.side { flex-direction: row; }
-.event-card.side .event-card-img { flex: 0 0 40%; aspect-ratio: auto; }
-@media (max-width: 640px) {
-  .event-card.side { flex-direction: column; }
-  .event-card.side .event-card-img { aspect-ratio: 16 / 10; }
-}
-.event-card.side .event-card-img {
-  flex: 0 0 42%;
-  aspect-ratio: auto;
-  min-height: 150px;
-}
-.event-card.side .event-card-body {
-  justify-content: center;
-}
-.event-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-.event-card-img img {
-  object-position: center 40%;  /* keeps faces and the screen in frame; adjust 40% to taste */
-}
-@media (max-width: 800px) {
-  .event-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.event-card.side {
-  min-height: 210px;
-}
-.event-card.side .event-card-img {
-  position: relative;
-}
-.event-card.side .event-card-img img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.section-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-}
-.card-image-container.avatar.ph{display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;background:rgba(255,255,255,.06)}
-.year-heading{text-align:center;margin:56px 0 24px;scroll-margin-top:100px}
-.year-heading:first-of-type{margin-top:8px}
-.card-linkedin{display:inline-flex;margin-top:12px;color:#70B5F9;transition:opacity .2s}
-.card-linkedin:hover{opacity:.75}
-.card-linkedin:focus-visible{outline:2px solid #70B5F9;outline-offset:3px;border-radius:4px}
-
-.js .reveal {
-  opacity: 0;
-  translate: 0 24px;
-  transition: opacity 0.6s ease, translate 0.6s ease;
-  transition-delay: var(--d, 0ms);
-}
-.js .reveal.in {
-  opacity: 1;
-  translate: 0 0;
-}
-@media (prefers-reduced-motion: reduce) {
-  .js .reveal { opacity: 1; translate: none; transition: none; }
-}
-.logo a{
-  text-decoration: none;
-  color: white;
-}
-#Team .container {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 24px;
-}
-#Team .container > .box {
-  grid-column: span 2;     /* 6 columns ÷ 2 = three cards per row */
-  width: auto;
-  min-width: 0;
-  max-width: none;
-  margin: 0;
-}
-
-/* centre a short last row (1 or 2 leftover cards) */
-#Team .container > .box:last-child:nth-child(3n+1) { grid-column: 3 / span 2; }
-#Team .container > .box:nth-last-child(2):nth-child(3n+1) { grid-column: 2 / span 2; }
-
-@media (max-width: 1000px) {
-  #Team .container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  #Team .container > .box,
-  #Team .container > .box:last-child:nth-child(3n+1),
-  #Team .container > .box:nth-last-child(2):nth-child(3n+1) { grid-column: auto; }
-}
-@media (max-width: 640px) {
-  #Team .container { grid-template-columns: 1fr; }
-}
-#Team .card-image-container img {
-  object-fit: cover;
-  object-position: center 20%;   /* lower = more headroom, higher = more chin */
-}
-#Team .box { height: auto; }
-#Team .card-image-container { height: auto; aspect-ratio: 4 / 5; }
-
-#Team .box .intro {
-  padding-bottom: 1.25rem;   /* space below the LinkedIn icon */
-}
-@media (max-width: 900px) {
-  .nav-toggle {
-    display: block;
-    margin-left: auto;          /* pushes the button to the right edge */
-  }
-
-  #nav-links {
-    display: flex;              /* always rendered, so it can animate */
-    flex-direction: column;
-    column-gap: 0;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: #0e0e10;
-    border-bottom: 1px solid var(--border);
-
-    /* closed state: clipped away from the bottom, so it unrolls top-down */
-    clip-path: inset(0 0 100% 0);
-    opacity: 0;
-    visibility: hidden;
-    transition: clip-path .35s ease, opacity .25s ease, visibility 0s linear .35s;
-  }
-
-  #nav-links.open {
-    clip-path: inset(0 0 0 0);
-    opacity: 1;
-    visibility: visible;
-    transition: clip-path .35s ease, opacity .25s ease, visibility 0s;
-  }
-
-  #nav-links a { display: block; padding: 1rem 1.25rem; }
-}
-@media (max-width: 1000px) {
-  #Team .container { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--team-gap, 40px); }
-  #Team .container > .box,
-  #Team .container > .box:last-child:nth-child(3n+1),
-  #Team .container > .box:nth-last-child(2):nth-child(3n+1) { grid-column: auto; }
-
-  /* you have 9 members, so the last card would sit alone on the left: centre it */
-  #Team .container > .box:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc((100% - var(--team-gap, 40px)) / 2);
-  }
-}
-
-@media (max-width: 640px) {
-  #Team .container {
-    --team-gap: 12px;
-    gap: var(--team-gap);
-    padding-inline: 12px;
-  }
-  #Team .container > .box { height: auto; }
-  #Team .card-image-container { height: auto; aspect-ratio: 4 / 5; }
-  #Team .box .intro { margin: 0; padding: .75rem .75rem 1rem; }
-  #Team .card-name { font-size: 1rem; }
-  #Team .card-designation { font-size: .8rem; }
-  #Team .card-linkedin { margin-top: 6px; }
-  #Team .card-linkedin svg { width: 20px; height: 20px; }
-}
-
-@media (max-width: 640px) {
+  /* What we do: 2 per row, smaller cards */
   #Services .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -396,23 +373,8 @@ section { scroll-margin-top: 80px; }
   #Services .services-content { top: 0; margin: 8px 0 0; padding: 0 6px; }
   #Services .services-content h3 { font-size: 1rem; }
   #Services .services-content p { font-size: .8rem; }
-}
-@media (max-width: 640px) {
-  .event-card.side .event-card-img {
-    flex: none;
-    width: 100%;
-    aspect-ratio: 4 / 3;   /* taller box, shows much more of the photo */
-    min-height: 0;
-  }
-  .event-card.side {
-    min-height: 0;
-  }
-  .event-card.side .event-card-img img {
-    object-position: center 30%;   /* faces sit in the upper part of group shots */
-  }
-}
-/* Gallery: 2 per row on phones */
-@media (max-width: 640px) {
+
+  /* Gallery: 2 per row, square tiles */
   #Gallery .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -424,11 +386,8 @@ section { scroll-margin-top: 80px; }
     width: auto;
     max-width: none;
     height: auto;
-    aspect-ratio: 1 / 1;   /* square tiles; try 4 / 3 for wider ones */
+    aspect-ratio: 1 / 1;
     margin: 0;
   }
   #Gallery .card-image-container { height: 100%; }
 }
-
-/* all screen sizes: stop photos being stretched */
-#Gallery .card-image-container img { object-fit: cover; }
