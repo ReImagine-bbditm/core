@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReImagine | Student Club at BBDITM</title>
+<meta name="description" content="ReImagine is a student-led technology club at BBDITM. See our events, meet the team, and join us.">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./additions.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+   <script src="./app.js"></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+</svg>
+
+<header>
+ <div class="nav-container">
+  <div class="logo"><a href="./index.html">ReImagine</a></div>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav>
+   <ul id="nav-links">
+    <li><a href="#hero-section">Home</a></li>
+    <li><a href="#About">About</a></li>
+    <li><a href="#Services">What we do</a></li>
+    <li><a href="#Events">Events</a></li>
+    <li><a href="#Team">Team</a></li>
+    <li><a href="#Gallery">Gallery</a></li>
+    <li><a href="#Contact">Join</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main class="main-content">
+ <section id="hero-section">
+  <canvas id="stars" role="img" aria-label="ReImagine"></canvas>
+  <div class="hero-content">
+   <div id="stars-slot" aria-hidden="true"></div>
+   <h1 data-stars-reveal>Reimagine it. Then make it real.</h1>
+<p data-stars-fade>A student-led community at BBDITM that learns technology by building with it.</p>
+<div class="hero-buttons" data-stars-fade>
+   <div class="nav-buttons">
+    <a class="btn btn-primary" href="#Contact">Join us</a>
+    <a class="btn btn-secondary" href="#Events">See events</a>
+   </div>
+  </div>
+  </div>
+ </section>
+
+ <section id="About">
+  <h2 class="intro">About us</h2>
+  <div class="card-container">
+   <div class="img-container">
+    <img src="./Site_ Images/Collective_Image.jpeg" alt="ReImagine members working together" loading="lazy">
+   </div>
+   <div class="card-contents">
+    <h3 class="about-title">Who we are</h3>
+    <p class="content">ReImagine is a student-led club at BBDITM focused on technology, innovation, and skill building. We bring together students who want to learn by making things.</p>
+    <h3 class="about-title">Our mission</h3>
+    <p class="content">We give students a collaborative space to learn, experiment, and apply their skills to real-world problems.</p>
+    <h3 class="about-title">Who can join</h3>
+    <p class="content">ReImagine is open to students of the Departments of Information Technology and Data Science from second year onwards. Beginners and experienced members are both welcome.</p>
+    <ul class="feature-list">
+     <li class="feature-item">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <div class="feature-text"><h4>Student-led</h4><p>Members plan and run every event.</p></div>
+     </li>
+     <li class="feature-item">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3z"/></svg></div>
+      <div class="feature-text"><h4>Learn by doing</h4><p>Workshops and projects, not just talks.</p></div>
+     </li>
+     <li class="feature-item">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg></div>
+      <div class="feature-text"><h4>Industry exposure</h4><p>Visits and talks from working professionals.</p></div>
+     </li>
+     <li class="feature-item">
+      <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-1 4 8.5 8.5 0 0 1-7.5 4.5A8.3 8.3 0 0 1 8 19l-5 1 1-5a8.3 8.3 0 0 1-1-4 8.5 8.5 0 0 1 4.5-7.5 8.4 8.4 0 0 1 4-1h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+      <div class="feature-text"><h4>Alumni network</h4><p>Graduates share advice with current students.</p></div>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </section>
+
+ <section id="Services">
+  <h2 class="intro">What we do</h2>
+  <p class="section-note">Click a card to see our past events of that type.</p>
+  <div class="container">
+
+   <a class="box" href="#Events" data-filter="workshop">
+    <div class="services-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+    <div class="services-content"><h3>Workshop</h3><p>Hands-on sessions to learn a new skill</p></div>
+   </a>
+
+   <a class="box" href="#Events" data-filter="industrial-visit">
+    <div class="services-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg></div>
+    <div class="services-content"><h3>Industrial Visit</h3><p>See how real tech companies work</p></div>
+   </a>
+
+   <a class="box" href="#Events" data-filter="tech-event">
+    <div class="services-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+    <div class="services-content"><h3>Tech Events</h3><p>Contests and showcases for students</p></div>
+   </a>
+
+   <a class="box" href="#Events" data-filter="guest-lecture">
+    <div class="services-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg></div>
+    <div class="services-content"><h3>Guest Lecture</h3><p>Talks by industry experts and faculty</p></div>
+   </a>
+
+   <a class="box" href="#Events" data-filter="alumni-talk">
+    <div class="services-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+    <div class="services-content"><h3>Alumni Talk</h3><p>Graduates share career paths and advice</p></div>
+   </a>
+
+   <a class="box" href="#Events" data-filter="career-guidance">
+    <div class="services-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+    <div class="services-content"><h3>Career Guidance</h3><p>Plan your path into the IT sector</p></div>
+   </a>
+
+  </div>
+ </section>
+
+ <section id="Events">
+  <h2 class="intro">Events</h2>
+  <div class="events-wrap">
+   <h3 class="events-sub">Upcoming</h3>
+   <p class="section-note left">No events announced yet. Follow our social pages for updates.</p>
+
+   <h3 class="events-sub">Recent events</h3>
+   <div class="event-grid">
+
+  <article class="event-card side">
+    <!-- Photo: replace the div below with <img src="./Site_ Images/Events_Images/your-photo.jpeg" alt="Expert Lecture" loading="lazy"> -->
+    <div class="event-card-img">
+      <img src="./Site_ Images/Events_Images/TCS visit.jpeg" alt="">
+    </div>
+    <div class="event-card-body">
+      <h4>TCS Industry Visit</h4>
+      <p class="event-card-meta"><span class="date">30 September 2026</span><span class="venue">TCS Lucknow</span></p>
+      <p class="event-card-summary">[One or two lines about what the event covered.]</p>
+    </div>
+  </article>
+    <article class="event-card side">
+    <!-- Photo: replace the div below with <img src="./Site_ Images/Events_Images/your-photo.jpeg" alt="Expert Lecture" loading="lazy"> -->
+    <div class="event-card-img">
+      <img src="./Site_ Images/Events_Images/Certi.jpeg" alt="">
+    </div>
+    <div class="event-card-body">
+      <h4>Certificate Distribution</h4>
+      <p class="event-card-meta"><span class="date">21 September 2026</span><span class="venue">BBDITM E-Block</span></p>
+      <p class="event-card-summary">[One or two lines about what the event covered.]</p>
+    </div>
+  </article>
+
+  <article class="event-card side">
+    <div class="event-card-img">
+      <img src="./Site_ Images/Events_Images/Data Detective 3.jpeg" alt="">
+    </div>
+    <div class="event-card-body">
+      <h4>Data Detective</h4>
+      <p class="event-card-meta"><span class="date">14 September 2026</span><span class="venue">BBDITM E-Block</span></p>
+      <p class="event-card-summary">[One or two lines about what the event covered.]</p>
+    </div>
+  </article>
+
+  <article class="event-card side">
+    <div class="event-card-img">Image</div>
+    <div class="event-card-body">
+      <h4>Orientation</h4>
+      <p class="event-card-meta"><span class="date">2 September 2026</span><span class="venue">BBDITM E-Block</span></p>
+      <p class="event-card-summary">[One or two lines about what the event covered.]</p>
+    </div>
+  </article>
+
+</div>
+<div class="section-cta"><a class="btn btn-secondary" href="./pastEvents.html">See our past events</a></div>
+   
+ </section>
+
+ <section id="Team">
+  <h2 class="intro">Our Team</h2>
+  <!-- <div class="container">
+    <h3 class="intro">
+  TODO
+    </h3>
+    </div> -->
+    <div class="container">
+ <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/GS.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Naavya Srivastava</h3><p class="card-designation">General Secretary</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Naavya Srivastava on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+ <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/COGS.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Arun Kumar</h3><p class="card-designation">Co-General Secretary</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Arun Kumar on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+ <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/TH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Divyanshi Shrivastava</h3><p class="card-designation">Technical Lead</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Divyanshi Shrivastava on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+
+ <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/MH2.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Shubham Pratap Singh</h3><p class="card-designation">Management Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Shubham on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+
+  <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/MH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Adarsh Yadav</h3><p class="card-designation">Management Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Adarsh Yadav on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+
+   <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/EH2.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Siddharth Trivedi</h3><p class="card-designation">Event Organizing Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Siddharth on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+
+    <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/EH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Khusagra Gupta</h3><p class="card-designation">Event Organizing Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Khusagra on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+
+     <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/CH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Ayush Shrivastava</h3><p class="card-designation">Creative Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Ayush on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+
+          <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/CH2.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Divyata Pandey</h3><p class="card-designation">Creative Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Ayush on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+</div>
+ <div class="section-cta"><a class="btn btn-secondary" href="./previousTeams.html">Meet Our Old Team</a></div>
+ </section>
+
+ <section id="Gallery">
+  <h2 class="intro">Gallery</h2>
+  <div class="container">
+   <!-- To add a photo, replace the text with: <img src="./gallery_images/your-photo.jpg" alt="Describe the photo" loading="lazy"> -->
+   <div class="box" id="gallery-cards"><div class="card-image-container tile">
+     <img src="./Site_ Images/Events_Images/Industry visit.jpeg" alt="" loading="lazy">
+   </div></div>
+   <div class="box" id="gallery-cards"><div class="card-image-container tile">
+     <img src="./Site_ Images/Events_Images/Data Detective.jpeg" alt="">
+   </div></div>
+   <div class="box" id="gallery-cards"><div class="card-image-container tile">
+     <img src="./Site_ Images/Events_Images/event.jpeg" alt="">
+   </div></div>
+      <div class="box" id="gallery-cards"><div class="card-image-container tile">
+     <img src="./Site_ Images/Events_Images/Data Detective 2.jpeg" alt="">
+   </div></div>
+      <div class="box" id="gallery-cards"><div class="card-image-container tile">
+     <img src="./Site_ Images/Events_Images/director.jpeg" alt="">
+   </div></div>
+      <div class="box" id="gallery-cards"><div class="card-image-container tile">
+     <img src="./Site_ Images/Events_Images/hod.jpeg" alt="">
+   </div></div>
+  </div>
+ </section>
+
+ <section id="Contact">
+  <h2 class="intro">Join ReImagine</h2>
+  <div class="container">
+   <div class="left-side">
+    <h3>Get in touch</h3>
+    <p class="contact-subtitle">Questions about joining or about an event? Write to us.</p>
+    <div class="item-list">
+     <div class="item">
+      <div class="item-icon icon-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+      <div class="item-text"><span class="item-label">Email</span><span class="item-value">reimagineclub7@gmail.com</span></div>
+     </div>
+     <div class="item">
+      <div class="item-icon icon-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+      <div class="item-text"><span class="item-label">Where</span><span class="item-value">BBDITM, E-Block</span></div>
+     </div>
+    </div>
+   </div>
+   <div class="box contact-form-box">
+    <h3>Become a member</h3>
+    <p class="contact-subtitle">No Recruitment Planned For Now.</p>
+    <a class="btn btn-primary" href="">CLOSED</a>
+   </div>
+  </div>
+ </section>
+</main>
+
+<footer id="Footer">
+ <div class="footer-container">
+  <div class="footer-col footer-brand">
+   <div class="logo footer-logo">ReImagine</div>
+   <p class="footer-tagline">A student-led technology club at BBDITM.</p>
+  </div>
+  <div class="footer-col">
+   <h4>Quick links</h4>
+   <ul>
+    <li><a href="#About">About</a></li>
+    <li><a href="#Services">What we do</a></li>
+    <li><a href="#Events">Events</a></li>
+    <li><a href="#Team">Team</a></li>
+    <li><a href="#Contact">Join</a></li>
+   </ul>
+  </div>
+  <div class="footer-col">
+   <h4>Find us online</h4>
+   <ul>
+    <li><a href="https://www.instagram.com/reimagine_it_bbd/">Instagram</a></li>
+    <li><a href="https://www.linkedin.com/company/reimagine-club/">LinkedIn</a></li>
+    <li><a href="https://github.com/reimagineclub-bbditm">GitHub</a></li>
+   </ul>
+  </div>
+ </div>
+ <div class="footer-bottom"><p>&copy; 2026 ReImagine, BBDITM. </p></div>
+</footer>
+<script src="./stars.js" defer></script>
+</body>
+</html>

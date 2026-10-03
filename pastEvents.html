@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Past events | ReImagine</title>
+<meta name="description" content="Past events organised by ReImagine, the student-led technology club at BBDITM.">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./additions.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+   <script src="./app.js"></script>
+<style>
+/* Past events page only. Uses neutral tints so it follows your existing theme colours. */
+.pe-wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+.pe-year{margin:56px 0 12px;padding-left:14px;border-left:4px solid var(--accent,#ff5a36);font-size:1.7rem;line-height:1.2}
+.pe-year:first-of-type{margin-top:0}
+.pe-item{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:32px;padding:28px 0;border-top:1px solid rgba(128,128,128,.35)}
+.pe-group .pe-item:last-child{border-bottom:1px solid rgba(128,128,128,.35)}
+.pe-image{aspect-ratio:4/3;border:1.5px dashed rgba(128,128,128,.55);background:rgba(128,128,128,.12);border-radius:8px;display:grid;place-items:center;font-size:.9rem;opacity:.85;overflow:hidden}
+.pe-image:has(img){border-style:solid;border-color:transparent;opacity:1}
+.pe-image img{width:100%;height:100%;object-fit:cover;display:block}
+.pe-body h3{margin:0 0 12px}
+.pe-meta{display:grid;grid-template-columns:max-content 1fr;gap:4px 18px;margin:0 0 16px;font-size:.95rem}
+.pe-meta dt{opacity:.7}
+.pe-meta dd{margin:0;font-weight:500}
+.pe-body p{margin:0 0 12px}
+.pe-body h4{margin:16px 0 6px}
+.pe-body ul{margin:0;padding-left:1.2em}
+.pe-body li{margin-bottom:4px}
+@media (max-width:720px){.pe-item{grid-template-columns:1fr;gap:20px}.pe-wrap{padding:0 18px}.pe-year{margin-top:40px}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="nav-container">
+  <div class="logo"><a href="./index.html">ReImagine</a></div>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav>
+   <ul id="nav-links">
+    <li><a href="./index.html#hero-section">Home</a></li>
+    <li><a href="./index.html#About">About</a></li>
+    <li><a href="./index.html#Services">What we do</a></li>
+    <li><a href="./index.html#Events">Events</a></li>
+    <li><a href="./index.html#Team">Team</a></li>
+    <li><a href="./index.html#Gallery">Gallery</a></li>
+    <li><a href="./index.html#Contact">Join</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main class="main-content">
+ <section id="Past-Events">
+  <h2 class="intro">Past events</h2>
+  <div class="pe-wrap">
+
+   <!-- Events are grouped by the year they took place, newest year first, newest event first inside each year.
+        To add an event: copy an <article> block into the right year's <div class="pe-group">.
+        To add a new year: copy an <h3 class="pe-year"> line and the <div class="pe-group"> below it, and put it above the older years.
+        To add a photo: replace the word "Image" inside .pe-image with <img src="./Site_ Images/Events_Images/your-photo.jpeg" alt="Describe the photo" loading="lazy"> -->
+
+   <h3 class="pe-year">2026</h3>
+   <div class="pe-group">
+
+    <article class="pe-item">
+     <div class="pe-image"><img src="./Site_ Images/Events_Images/Industry visit.jpeg" alt="Students at the TCS Industry Visit" loading="lazy"></div>
+     <div class="pe-body">
+      <h3>TCS Industry Visit</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>30 September 2026</dd><dt>Venue</dt><dd>TCS Lucknow</dd></dl>
+      <p>[Add a short summary of the event.]</p>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">
+        <img src="./Site_ Images/Events_Images/Certi.jpeg" alt="">
+     </div>
+     <div class="pe-body">
+      <h3>Certificate Distribution</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>21 September 2026</dd><dt>Venue</dt><dd>BBDITM E-Block</dd></dl>
+      <p>[Add a short summary of the event.]</p>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image"><img src="./Site_ Images/Events_Images/Data Detective.jpeg" alt="Students at the Data Detective event" loading="lazy"></div>
+     <div class="pe-body">
+      <h3>Data Detective</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>14 September 2026</dd><dt>Venue</dt><dd>BBDITM E-Block</dd></dl>
+      <p>[Add a short summary of the event.]</p>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Orientation</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>2 September 2026</dd><dt>Venue</dt><dd>BBDITM E-Block</dd></dl>
+      <p>[Add a short summary of the event.]</p>
+     </div>
+    </article>
+
+   </div>
+
+   <h3 class="pe-year">2025</h3>
+   <div class="pe-group">
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Expert Lecture</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>15 May 2025</dd><dt>Time</dt><dd>3:00 to 5:00 PM</dd><dt>Venue</dt><dd>Online</dd></dl>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Alumni Talk</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>5 May 2025</dd><dt>Time</dt><dd>3:00 to 5:00 PM</dd><dt>Venue</dt><dd>Online</dd></dl>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Guest Lecture</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>30 April 2025</dd><dt>Time</dt><dd>3:00 to 5:00 PM</dd><dt>Venue</dt><dd>Online</dd></dl>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Tech Event</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>25 April 2025</dd><dt>Time</dt><dd>9:00 AM to 5:00 PM</dd><dt>Venue</dt><dd>Stepper Hall, BBDITM</dd></dl>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Industrial Visit</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>10 April 2025</dd><dt>Time</dt><dd>9:00 AM to 5:00 PM</dd><dt>Venue</dt><dd>TCS Campus, Lucknow</dd></dl>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Career Guidance</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>28 March 2025</dd><dt>Time</dt><dd>3:00 to 5:00 PM</dd><dt>Venue</dt><dd>Online</dd></dl>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Industrial Talk</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>20 March 2025</dd><dt>Time</dt><dd>3:00 to 5:00 PM</dd><dt>Venue</dt><dd>Online</dd></dl>
+     </div>
+    </article>
+
+   </div>
+
+   <h3 class="pe-year">2024</h3>
+   <div class="pe-group">
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Alumni Talk</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>30 November 2024</dd><dt>Venue</dt><dd>Online, hosted by BBDITM</dd></dl>
+      <p>An online session with Mr. Shivam Kesharwani, Senior Associate at Cognizant Worldwide Limited, UK. It connected current students with an alumnus for a real-world view of careers and the IT industry.</p>
+      <h4>Highlights</h4>
+      <ul>
+       <li>Industry insights: current trends, tools, and practices, especially in a global work environment.</li>
+       <li>Career guidance: planning a career, building skills, and moving from college to work.</li>
+       <li>Global exposure: what working in the UK is like, based on his own experience.</li>
+       <li>Networking: students were encouraged to reach out to alumni for mentorship and advice.</li>
+       <li>Inspiration: a successful graduate&#x27;s journey as a model for ambitious goals.</li>
+      </ul>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Industrial Visit to STPI</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>25 November 2024</dd><dt>Venue</dt><dd>STPI</dd></dl>
+      <p>Students visited the Plug and Play (PNP) hall, which hosts seminars, workshops, and conferences, then the Network Operating Centre that monitors and manages IT infrastructure, and finished with a presentation on STPI in the conference room.</p>
+      <h4>Highlights</h4>
+      <ul>
+       <li>Presentation on STPI&#x27;s mission, vision, infrastructure, and facilities.</li>
+       <li>Guided tour of the incubation centre and data centre.</li>
+       <li>Question and answer session with STPI officials.</li>
+       <li>Mr. Satyam explained STPI&#x27;s objectives and services, including office space, funding support of up to ₹25 lakh, and the Plug and Play model.</li>
+       <li>Ms. Disha Srivastava took students through STPI&#x27;s core infrastructure.</li>
+       <li>Mr. Jairam Yadav presented STPI&#x27;s operating model and opportunities for startups.</li>
+      </ul>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>One Day Workshop: Mastering Research Paper Writing</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>25 October 2024</dd><dt>Venue</dt><dd>BBDITM</dd></dl>
+      <p>Led by Dr. Rakesh Kr. Yadav, an expert in research methodology and academic writing, for researchers, academicians, and postgraduate students from different disciplines.</p>
+      <h4>Highlights</h4>
+      <ul>
+       <li>Step-by-step guidance through the whole process, from choosing a topic to final submission.</li>
+       <li>Real-world examples and best practices from Dr. Yadav&#x27;s experience.</li>
+       <li>Outcome: a clearer understanding of how a strong research paper is structured.</li>
+       <li>Outcome: practical tips for clarity, precision, and coherence in academic writing.</li>
+      </ul>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Reimagine Student Club Event</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>23 October 2024</dd><dt>Venue</dt><dd>BBDITM</dd></dl>
+      <p>A day that brought cultural, technical, and social activities together, aimed at all-round development of participants.</p>
+      <h4>Highlights</h4>
+      <ul>
+       <li>Cultural: vocal performances, a fashion show, traditional dance, and poster making on innovation and sustainability.</li>
+       <li>Technical: a coding contest, mystery box challenges, and an exhibition of student projects and prototypes.</li>
+       <li>Social: debates on current issues, awareness campaigns on the environment and mental health, and sessions on inclusivity.</li>
+       <li>Outcomes: awards and certificates, stronger problem-solving and communication, and a collaborative atmosphere.</li>
+      </ul>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Guest Lecture: Innovation and Prototype Validation</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>29 August 2024</dd><dt>Venue</dt><dd>BBDITM</dd></dl>
+      <p>Dr. Saurabh Kr. Srivastava explained why innovation matters and how a prototype is checked for feasibility, function, and market readiness.</p>
+      <h4>Highlights</h4>
+      <ul>
+       <li>Innovation: what it means and its types (product, process, and business model).</li>
+       <li>Prototype development: the path from idea to prototype, common challenges, and iterative design.</li>
+       <li>Validation: its goals and methods, including functional testing, user feedback, and market analysis.</li>
+       <li>Tools, techniques, and key performance indicators for judging a prototype&#x27;s success.</li>
+      </ul>
+     </div>
+    </article>
+
+    <article class="pe-item">
+     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+     <div class="pe-body">
+      <h3>Guest Lecture: Prototype and Process Design</h3>
+      <dl class="pe-meta"><dt>Date</dt><dd>11 May 2024</dd><dt>Venue</dt><dd>BBDITM</dd></dl>
+      <p>A one-day session led by Dr. Hitesh Kesarwani on design methods and practical ways to develop prototypes and processes, linking theory to practice through iterative design and user feedback.</p>
+      <h4>Highlights</h4>
+      <ul>
+       <li>Group exercises on brainstorming and solving industry-style problems.</li>
+       <li>Expert guidance on best practices, common pitfalls, and personal experience.</li>
+       <li>Informal sessions for networking with other participants.</li>
+      </ul>
+     </div>
+    </article>
+
+   </div>
+
+  </div>
+ </section>
+</main>
+
+<footer id="Footer">
+ <div class="footer-container">
+  <div class="footer-col footer-brand">
+   <div class="logo footer-logo">ReImagine</div>
+   <p class="footer-tagline">A student-led technology club at BBDITM.</p>
+  </div>
+  <div class="footer-col">
+   <h4>Quick links</h4>
+   <ul>
+    <li><a href="./index.html#About">About</a></li>
+    <li><a href="./index.html#Services">What we do</a></li>
+    <li><a href="./index.html#Events">Events</a></li>
+    <li><a href="./index.html#Team">Team</a></li>
+    <li><a href="./index.html#Contact">Join</a></li>
+   </ul>
+  </div>
+  <div class="footer-col">
+   <h4>Find us online</h4>
+   <ul>
+    <li><a href="https://www.instagram.com/reimagine_it_bbd/">Instagram</a></li>
+    <li><a href="https://www.linkedin.com/company/reimagine-club/">LinkedIn</a></li>
+    <li><a href="https://github.com/reimagineclub-bbditm">GitHub</a></li>
+   </ul>
+  </div>
+ </div>
+ <div class="footer-bottom"><p>&copy; 2026 ReImagine, BBDITM.</p></div>
+</footer>
+
+</body>
+</html>
