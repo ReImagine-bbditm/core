@@ -5,12 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ReImagine | Student Club at BBDITM</title>
 <meta name="description" content="ReImagine is a student-led technology club at BBDITM. See our events, meet the team, and join us.">
-<link rel="icon" type="svg" href="./Site_ Images/logo.svg">
+<link rel="icon" type="image/svg+xml" href="./Site_ Images/logo.svg">
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./Additions.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
    <script src="./app.js"></script>
+<style>
+/* Recent event cards are links now. You can move these two rules into Additions.css. */
+a.event-card{color:inherit;text-decoration:none;cursor:pointer}
+a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offset:3px}
+</style>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -127,53 +132,83 @@
   <h2 class="intro">Events</h2>
   <div class="events-wrap">
    <h3 class="events-sub">Upcoming</h3>
-   <p class="section-note left">No events announced yet. Follow our social pages for updates.</p>
+<article class="event-card featured">
+  <div class="event-card-img">
+    <img src="./Site_ Images/Events_Images/hack-day-poster.png"
+         alt="Poster for Hacktoberfest Hack Day Lucknow, 23 October 2026" loading="lazy">
+  </div>
+  <div class="event-card-body">
+    <h4>Hacktoberfest Hack Day Lucknow</h4>
+    <p class="event-card-meta">
+      <span class="date">23 October 2026</span>
+      <span class="venue">BBDITM, Lucknow</span>
+    </p>
+    <p class="event-card-desc">
+      A one-day, in-person hackathon in collaboration with Major League Hacking.
+      Build a project with open-source or open-weight AI, publish it on GitHub,
+      and demo it live to the judges for a shot at Best Open-Source AI Project.
+    </p>
+    <ul class="event-card-facts">
+      <li><strong>Time</strong>10:00 AM to 5:00 PM IST</li>
+      <li><strong>Open to</strong>BBD students, solo or in teams</li>
+      <li><strong>Bring</strong>Laptop, GitHub account, college ID</li>
+      <li><strong>Prizes</strong>Best Open-Source AI Project, Best Use of Gemma 4</li>
+    </ul>
+    <div class="button-div">
+    <a class="btn btn-primary" href="https://events.mlh.com/events/15477-hacktoberfest-hack-day-lucknow-x-reimagine-it"
+       target="_blank" rel="noopener">Register on MLH</a>
+       <a class=" btn btn-secondary" href="https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/challenges#:~:text=DEV%2C%20and%20DigitalOcean.-,CHALLENGES,-Best%20Use%20of"
+        target = "_blank" rel="noopener"> See Challenges</a>
+        </div>
+  </div>
+</article>
 
    <h3 class="events-sub">Recent events</h3>
    <div class="event-grid">
 
-  <article class="event-card side">
-    <!-- Photo: replace the div below with <img src="./Site_ Images/Events_Images/your-photo.jpeg" alt="Expert Lecture" loading="lazy"> -->
+  <a class="event-card side" href="./pastEvents.html#tcs-industry-visit">
     <div class="event-card-img">
       <img src="./Site_ Images/Events_Images/TCS visit.jpeg" alt="">
     </div>
     <div class="event-card-body">
       <h4>TCS Industry Visit</h4>
       <p class="event-card-meta"><span class="date">30 September 2026</span><span class="venue">TCS Lucknow</span></p>
-      <p class="event-card-summary">[One or two lines about what the event covered.]</p>
+      <p class="event-card-summary">Third-year students toured TCS Lucknow to see industry practice first-hand</p>
     </div>
-  </article>
-    <article class="event-card side">
-    <!-- Photo: replace the div below with <img src="./Site_ Images/Events_Images/your-photo.jpeg" alt="Expert Lecture" loading="lazy"> -->
+  </a>
+
+  <a class="event-card side" href="./pastEvents.html#certificate-distribution">
     <div class="event-card-img">
       <img src="./Site_ Images/Events_Images/Certi.jpeg" alt="">
     </div>
     <div class="event-card-body">
       <h4>Certificate Distribution</h4>
       <p class="event-card-meta"><span class="date">21 September 2026</span><span class="venue">BBDITM E-Block</span></p>
-      <p class="event-card-summary">[One or two lines about what the event covered.]</p>
+      <p class="event-card-summary">Data Detective participants received their certificates.</p>
     </div>
-  </article>
+  </a>
 
-  <article class="event-card side">
+  <a class="event-card side" href="./pastEvents.html#data-detective">
     <div class="event-card-img">
       <img src="./Site_ Images/Events_Images/Data Detective 3.jpeg" alt="">
     </div>
     <div class="event-card-body">
       <h4>Data Detective</h4>
       <p class="event-card-meta"><span class="date">14 September 2026</span><span class="venue">BBDITM E-Block</span></p>
-      <p class="event-card-summary">[One or two lines about what the event covered.]</p>
+      <p class="event-card-summary">A team challenge where students cleaned and analysed data to crack a case.</p>
     </div>
-  </article>
+  </a>
 
-  <article class="event-card side">
-    <div class="event-card-img">Image</div>
+  <a class="event-card side" href="./pastEvents.html#orientation">
+    <div class="event-card-img">
+      <img src="./Site_ Images/Events_Images/event.jpeg" alt="">
+    </div>
     <div class="event-card-body">
       <h4>Orientation</h4>
       <p class="event-card-meta"><span class="date">2 September 2026</span><span class="venue">BBDITM E-Block</span></p>
-      <p class="event-card-summary">[One or two lines about what the event covered.]</p>
+      <p class="event-card-summary">An introduction to the department for second-year IT and Data Science students.</p>
     </div>
-  </article>
+  </a>
 
 </div>
 <div class="section-cta"><a class="btn btn-secondary" href="./pastEvents.html">See our past events</a></div>

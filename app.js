@@ -57,3 +57,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
   targets.forEach(function (el) { io.observe(el); });
 });
+document.addEventListener('DOMContentLoaded', function () {
+document.querySelectorAll('.pe-image').forEach(function (box) {
+  var imgs = box.querySelectorAll('img');
+  if (imgs.length < 2) return;
+  var wrap = document.createElement('div');
+  wrap.className = 'pe-gallery';
+  box.parentNode.insertBefore(wrap, box);
+  wrap.appendChild(box);
+  box.tabIndex = 0;
+  box.setAttribute('role', 'group');
+  box.setAttribute('aria-label', 'Photo gallery, ' + imgs.length + ' photos');
+  var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  function btn(cls, label, txt) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'pe-nav ' + cls;
+    b.setAttribute('aria-label', label); b.textContent = txt;
+    wrap.appendChild(b); return b;
+  }
+  var prev = btn('pe-prev', 'Previous photo', '\u2039');
+  var next = btn('pe-next', 'Next photo', '\u203A');
+  var count = document.createElement('span');
+  count.className = 'pe-count'; count.setAttribute('aria-hidden', 'true');
+  wrap.appendChild(count);
+  function update() {
+    var i = Math.round(box.scrollLeft / box.clientWidth);
+    count.textContent = (i + 1) + ' / ' + imgs.length;
+    prev.hidden = i <= 0; next.hidden = i >= imgs.length - 1;
+  }
+  prev.onclick = function () { box.scrollBy({ left: -box.clientWidth, behavior: smooth }); };
+  next.onclick = function () { box.scrollBy({ left: box.clientWidth, behavior: smooth }); };
+  box.addEventListener('scroll', update, { passive: true });
+  update();
+})
+});

@@ -5,32 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Past events | ReImagine</title>
 <meta name="description" content="Past events organised by ReImagine, the student-led technology club at BBDITM.">
-<link rel="icon" type="svg" href="./Site_ Images/logo.svg">
+<link rel="icon" type="image/svg+xml" href="./Site_ Images/logo.svg">
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./Additions.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
    <script src="./app.js"></script>
-<style>
-/* Past events page only. Uses neutral tints so it follows your existing theme colours. */
-.pe-wrap{max-width:1000px;margin:0 auto;padding:0 24px}
-.pe-year{margin:56px 0 12px;padding-left:14px;border-left:4px solid var(--accent,#ff5a36);font-size:1.7rem;line-height:1.2}
-.pe-year:first-of-type{margin-top:0}
-.pe-item{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:32px;padding:28px 0;border-top:1px solid rgba(128,128,128,.35)}
-.pe-group .pe-item:last-child{border-bottom:1px solid rgba(128,128,128,.35)}
-.pe-image{aspect-ratio:4/3;border:1.5px dashed rgba(128,128,128,.55);background:rgba(128,128,128,.12);border-radius:8px;display:grid;place-items:center;font-size:.9rem;opacity:.85;overflow:hidden}
-.pe-image:has(img){border-style:solid;border-color:transparent;opacity:1}
-.pe-image img{width:100%;height:100%;object-fit:cover;display:block}
-.pe-body h3{margin:0 0 12px}
-.pe-meta{display:grid;grid-template-columns:max-content 1fr;gap:4px 18px;margin:0 0 16px;font-size:.95rem}
-.pe-meta dt{opacity:.7}
-.pe-meta dd{margin:0;font-weight:500}
-.pe-body p{margin:0 0 12px}
-.pe-body h4{margin:16px 0 6px}
-.pe-body ul{margin:0;padding-left:1.2em}
-.pe-body li{margin-bottom:4px}
-@media (max-width:720px){.pe-item{grid-template-columns:1fr;gap:20px}.pe-wrap{padding:0 18px}.pe-year{margin-top:40px}}
-</style>
 </head>
 <body>
 
@@ -65,41 +45,63 @@
    <h3 class="pe-year">2026</h3>
    <div class="pe-group">
 
-    <article class="pe-item">
-     <div class="pe-image"><img src="./Site_ Images/Events_Images/Industry visit.jpeg" alt="Students at the TCS Industry Visit" loading="lazy"></div>
+    <article class="pe-item" id="tcs-industry-visit">
+     <div class="pe-image">
+      <img src="./Site_ Images/Events_Images/Industry visit.jpeg" alt="Students at the TCS Industry Visit" loading="lazy">
+      <img src="./Site_ Images/Events_Images/TCS visit.jpeg" alt="Students outside TCS Lucknow" loading="lazy">
+     </div>
      <div class="pe-body">
       <h3>TCS Industry Visit</h3>
       <dl class="pe-meta"><dt>Date</dt><dd>30 September 2026</dd><dt>Venue</dt><dd>TCS Lucknow</dd></dl>
-      <p>[Add a short summary of the event.]</p>
+      <p>ReImagine organised an industrial visit to Tata Consultancy Services (TCS), Lucknow, for third-year students of Information Technology and Data Science, with support from faculty members. The visit gave students a first-hand look at how a large technology company works and helped connect classroom learning with the professional world.</p>
+      <h4>Highlights</h4>
+      <ul>
+       <li>Insight into industry practices and how teams work in a professional setting.</li>
+       <li>A look at corporate culture at a leading IT services company.</li>
+       <li>Exposure to emerging technologies used in industry.</li>
+      </ul>
      </div>
     </article>
 
-    <article class="pe-item">
-     <div class="pe-image" role="img" aria-label="Image placeholder">
-        <img src="./Site_ Images/Events_Images/Certi.jpeg" alt="">
-     </div>
+    <article class="pe-item" id="certificate-distribution">
+     <div class="pe-image">
+      <img src="./Site_ Images/Events_Images/Certi.jpeg" alt="Data Detective participants receiving certificates" loading="lazy">
+      <img src="./Site_ Images/Events_Images/Mcerti.jpeg" alt="">
+      <img src="./Site_ Images/Events_Images/Hcerti.jpeg" alt="">
+   
+   </div>
      <div class="pe-body">
       <h3>Certificate Distribution</h3>
       <dl class="pe-meta"><dt>Date</dt><dd>21 September 2026</dd><dt>Venue</dt><dd>BBDITM E-Block</dd></dl>
-      <p>[Add a short summary of the event.]</p>
+      <p>Certificates were presented to the participants of Data Detective in the presence of the Director, Dr. Pratul Arvind, the Head of Department, Dr. Santosh Shukla, and faculty members of the department. The ceremony recognised the participants&#x27; effort in the activity.</p>
      </div>
     </article>
 
-    <article class="pe-item">
-     <div class="pe-image"><img src="./Site_ Images/Events_Images/Data Detective.jpeg" alt="Students at the Data Detective event" loading="lazy"></div>
+    <article class="pe-item" id="data-detective">
+     <div class="pe-image">
+      <img src="./Site_ Images/Events_Images/Data Detective.jpeg" alt="Students at the Data Detective event" loading="lazy">
+      <img src="./Site_ Images/Events_Images/Data Detective 3.jpeg" alt="Data Detective participants" loading="lazy">
+     </div>
      <div class="pe-body">
       <h3>Data Detective</h3>
       <dl class="pe-meta"><dt>Date</dt><dd>14 September 2026</dd><dt>Venue</dt><dd>BBDITM E-Block</dd></dl>
-      <p>[Add a short summary of the event.]</p>
+      <p>Data Detective was a peer-to-peer learning activity organised by the ReImagine IT Club for students of the Department of Information Technology and Data Science. Working in teams of two to four, students solved a data &quot;case&quot; across three rounds, from cleaning raw data to presenting their conclusions.</p>
+      <h4>Highlights</h4>
+      <ul>
+       <li>Skills practised: data cleaning, analysis and visualisation, logical reasoning, teamwork, and data storytelling.</li>
+       <li>Tools used included Python (Pandas, NumPy, Matplotlib), Google Colab or Jupyter Notebook, and Excel.</li>
+       <li>An offline, team-based activity pitched at beginner to intermediate level.</li>
+       <li>The Head of Department, Dr. Santosh Shukla, and faculty members supported and encouraged the participants throughout.</li>
+      </ul>
      </div>
     </article>
 
-    <article class="pe-item">
-     <div class="pe-image" role="img" aria-label="Image placeholder">Image</div>
+    <article class="pe-item" id="orientation">
+     <div class="pe-image"><img src="./Site_ Images/Events_Images/event.jpeg" alt="Students and faculty at the department orientation" loading="lazy"></div>
      <div class="pe-body">
-      <h3>Orientation</h3>
+      <h3>Orientation 2026</h3>
       <dl class="pe-meta"><dt>Date</dt><dd>2 September 2026</dd><dt>Venue</dt><dd>BBDITM E-Block</dd></dl>
-      <p>[Add a short summary of the event.]</p>
+      <p>An orientation session for second-year students of the Department of Information Technology and Data Science, held in the presence of the Director, Dr. Pratul Arvind, the Head of Department, Prof. Santosh Shukla, and faculty members. All first-year students take their classes together, so this was the students&#x27; first introduction to their own department.</p>
      </div>
     </article>
 
