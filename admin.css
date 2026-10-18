@@ -1,0 +1,179 @@
+/* Admin page styles. Loaded after style.css, so it reuses its colour variables. */
+[hidden] { display: none !important; }
+
+.adm-body { padding-bottom: 4rem; }
+.adm-top {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  padding: 1rem 1.5rem; background: var(--card-bg); border-bottom: 1px solid var(--border);
+}
+.adm-top .logo { text-decoration: none; }
+.adm-tag {
+  font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  background: var(--accent-dim); color: var(--accent); border-radius: 999px; padding: .2rem .7rem;
+}
+.adm-who { margin-left: auto; color: var(--text-secondary); font-size: .9rem; overflow-wrap: anywhere; }
+
+/* Wider container for desktop (was 860px) */
+.adm { max-width: 1280px; margin: 2rem auto; padding: 0 1.5rem; }
+.adm h1 { font-family: 'Fraunces', serif; font-size: 2rem; margin-bottom: .75rem; }
+.adm h2 { font-family: 'Fraunces', serif; font-size: 1.3rem; margin-bottom: .75rem; }
+.adm .adm-h2 { margin: 2rem 0 1rem; }
+.adm p { color: var(--text-secondary); line-height: 1.6; }
+.adm code { background: var(--card-bg-strong); padding: .1rem .4rem; border-radius: 4px; }
+a.btn { display: inline-block; text-decoration: none; text-align: center; }
+
+.adm-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem 1.4rem; margin-bottom: 1rem;
+}
+.adm-card .btn { margin-top: .75rem; }
+
+.adm-tabs { display: flex; gap: .5rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.adm-tabs button {
+  background: var(--card-bg); color: var(--text-secondary); border: 1px solid var(--border);
+  border-radius: 999px; padding: .45rem 1.1rem; font: inherit; cursor: pointer;
+}
+.adm-tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.adm-link { margin-left: auto; color: var(--text-secondary); font-size: .9rem; }
+
+/* 4 columns on desktop: Category, Date, Start, End share one row */
+.adm-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem 1rem; }
+.adm-grid .wide { grid-column: 1 / -1; }
+
+/* Label is a normal block so the "(optional)" hint stays on the same line as the label text */
+.adm label { display: block; font-size: .9rem; font-weight: 600; color: var(--text-primary); }
+.adm label input, .adm label select, .adm label textarea { display: block; width: 100%; margin-top: .3rem; }
+.adm .opt { font-weight: 400; color: var(--text-secondary); }
+.adm input, .adm select, .adm textarea {
+  box-sizing: border-box;
+  background: var(--card-bg-strong); border: 1px solid var(--border); border-radius: 8px;
+  padding: .5rem .75rem; color: var(--text-primary); font: inherit; font-weight: 400; font-size: .95rem; outline: none;
+}
+.adm input:focus, .adm select:focus, .adm textarea:focus { border-color: var(--accent); }
+.adm textarea { resize: vertical; }
+.adm input[type="date"], .adm input[type="time"] { color-scheme: dark; }
+
+.adm-hint { font-size: .85rem; margin-top: .75rem; }
+.adm-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .5rem; }
+.adm-msg { margin-top: .75rem; font-size: .9rem; min-height: 1.2em; }
+.adm-msg.ok { color: #6fd08c; }
+.adm-msg.err { color: #ff8a7a; }
+
+.adm-inline { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .75rem; }
+.adm-inline input { flex: 1 1 240px; }
+.adm-inline .btn { margin-top: 0; }
+
+.adm-row {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+  padding: .85rem 1.1rem; margin-bottom: .6rem;
+}
+.adm-row .info { flex: 1 1 260px; min-width: 0; }
+.adm-row .info strong { display: block; color: var(--text-primary); overflow-wrap: anywhere; }
+.adm-row .info span { color: var(--text-secondary); font-size: .85rem; }
+.adm-row .acts { display: flex; gap: .5rem; flex-wrap: wrap; }
+.adm-row .acts button {
+  background: var(--card-bg-strong); color: var(--text-primary); border: 1px solid var(--border);
+  border-radius: 8px; padding: .4rem .8rem; font: inherit; font-size: .85rem; cursor: pointer;
+}
+.adm-row .acts button:hover { border-color: var(--accent); }
+.adm-row .acts button.danger:hover { border-color: #ff6a5a; color: #ff8a7a; }
+.badge {
+  font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  border-radius: 999px; padding: .15rem .6rem; border: 1px solid var(--border); color: var(--text-secondary);
+  white-space: nowrap;
+}
+.badge.up { color: var(--accent); border-color: var(--accent); }
+.badge.draft { color: #f0c36a; border-color: #f0c36a; }
+
+/* Added for the extra event fields */
+.adm-sub { font-family: 'Fraunces', serif; font-size: 1.05rem; margin: 1.5rem 0 .6rem; color: var(--text-primary); }
+.adm-sub .opt { font-family: inherit; font-size: .85rem; }
+.adm-hint-flush { margin-top: 0; }
+.adm code { overflow-wrap: anywhere; }
+.adm-thumbs { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+.adm-thumb {
+  display: inline-flex; align-items: center; justify-content: center; max-width: 100%;
+  background: var(--card-bg-strong); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  min-width: 4rem; min-height: 4rem; font-size: .75rem; color: var(--text-secondary);
+}
+.adm-thumb img { display: block; height: 4.5rem; width: auto; max-width: 9rem; object-fit: cover; }
+.adm-thumb.bad { padding: .4rem .6rem; border-color: #ff6a5a; color: #ff8a7a; overflow-wrap: anywhere; }
+
+/* Very wide screens: form on the left, event list in its own scrolling panel on the right */
+@media (min-width: 1500px) {
+  .adm { max-width: 1600px; }
+  #tab-events {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+  #tab-events > #import-card { grid-column: 1 / -1; grid-row: 1; }
+  #tab-events > #event-form { grid-column: 1; grid-row: 2 / span 3; }
+  #tab-events > .adm-h2 { grid-column: 2; grid-row: 2; margin-top: 0; }
+  #tab-events > #events-empty { grid-column: 2; grid-row: 3; }
+  #tab-events > #event-list {
+    grid-column: 2; grid-row: 4;
+    position: sticky; top: 1rem;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding-right: .4rem;
+  }
+}
+
+/* Compact rows in the events list so many events fit */
+#event-list .adm-row { padding: .55rem .85rem; gap: .4rem .75rem; margin-bottom: .45rem; border-radius: 10px; }
+#event-list .adm-row .info { flex: 1 1 180px; }
+#event-list .adm-row .info strong { font-size: .95rem; }
+#event-list .adm-row .info span { font-size: .8rem; }
+#event-list .adm-row .acts { gap: .35rem; }
+#event-list .adm-row .acts button { padding: .25rem .6rem; font-size: .8rem; }
+
+/* Publishing fields: give each two columns so the dropdown text is not cut off */
+.adm-grid > label:has(> #f-status),
+.adm-grid > label:has(> #f-slug) { grid-column: span 2; }
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .adm-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Phone */
+@media (max-width: 640px) {
+  .adm-grid { grid-template-columns: 1fr; }
+}
+
+/* Themed scrollbars (page + events list) */
+html, #event-list { scrollbar-gutter: auto; }
+html::-webkit-scrollbar, #event-list::-webkit-scrollbar { width: 10px; height: 10px; }
+html::-webkit-scrollbar-track, #event-list::-webkit-scrollbar-track { background: transparent; }
+html::-webkit-scrollbar-thumb, #event-list::-webkit-scrollbar-thumb {
+  background: var(--card-bg-strong); border: 1px solid var(--border); border-radius: 999px;
+}
+html::-webkit-scrollbar-thumb:hover, #event-list::-webkit-scrollbar-thumb:hover { background: var(--accent); border-color: var(--accent); }
+/* Firefox */
+@supports not selector(::-webkit-scrollbar) {
+  html, #event-list { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+}
+
+/* Alumni tab */
+.adm-grid .half { grid-column: span 2; }
+#alumni-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: .45rem .75rem; }
+#alumni-list .adm-row { padding: .55rem .85rem; margin-bottom: 0; border-radius: 10px; gap: .4rem .75rem; }
+#alumni-list .adm-row .info { flex: 1 1 150px; }
+#alumni-list .adm-row .info strong { font-size: .95rem; }
+#alumni-list .adm-row .info span { font-size: .8rem; }
+#alumni-list .adm-row .acts { gap: .35rem; }
+#alumni-list .adm-row .acts button { padding: .25rem .6rem; font-size: .8rem; }
+
+/* Single-column phones: spanning two columns would create a phantom second column */
+@media (max-width: 640px) {
+  .adm-grid .half,
+  .adm-grid > label:has(> #f-status),
+  .adm-grid > label:has(> #f-slug) { grid-column: 1 / -1; }
+  #alumni-list { grid-template-columns: 1fr; }
+}

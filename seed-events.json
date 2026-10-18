@@ -1,0 +1,725 @@
+[
+  {
+    "title": "Hacktoberfest Hack Day Lucknow",
+    "type": "tech-event",
+    "date": "2026-10-23",
+    "startTime": "10:00",
+    "endTime": "17:00",
+    "venue": "BBDITM, Lucknow",
+    "summary": "A one-day, in-person hackathon with Major League Hacking.",
+    "description": "A one-day, in-person hackathon in collaboration with Major League Hacking. Build a project with open-source or open-weight AI, publish it on GitHub, and demo it live to the judges for a shot at Best Open-Source AI Project.",
+    "highlights": [],
+    "images": [
+      "HackDay2_IST_connected.jpg"
+    ],
+    "facts": [
+      {
+        "label": "Time",
+        "value": "10:00 AM to 5:00 PM IST"
+      },
+      {
+        "label": "Open to",
+        "value": "BBD students, solo or in teams"
+      },
+      {
+        "label": "Bring",
+        "value": "Laptop, GitHub account, college ID"
+      },
+      {
+        "label": "Prizes",
+        "value": "Best Open-Source AI Project, Best Use of Gemma 4"
+      }
+    ],
+    "registerLabel": "Register on MLH",
+    "registerUrl": "https://events.mlh.com/events/15477-hacktoberfest-hack-day-lucknow-x-reimagine-it",
+    "secondaryLabel": "See Challenges",
+    "secondaryUrl": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/challenges#:~:text=DEV%2C%20and%20DigitalOcean.-,CHALLENGES,-Best%20Use%20of",
+    "slug": "hacktoberfest-hack-day-lucknow"
+  },
+  {
+    "title": "TCS Industry Visit",
+    "type": "industrial-visit",
+    "date": "2026-09-30",
+    "startTime": "",
+    "endTime": "",
+    "venue": "TCS Lucknow",
+    "summary": "Third-year students toured TCS Lucknow to see industry practice first-hand",
+    "description": "ReImagine organised an industrial visit to Tata Consultancy Services (TCS), Lucknow, for third-year students of Information Technology and Data Science, with support from faculty members. The visit gave students a first-hand look at how a large technology company works and helped connect classroom learning with the professional world.",
+    "highlights": [
+      "Insight into industry practices and how teams work in a professional setting.",
+      "A look at corporate culture at a leading IT services company.",
+      "Exposure to emerging technologies used in industry."
+    ],
+    "images": [
+      "TCS visit.jpeg",
+      "Industry visit.jpeg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "tcs-industry-visit"
+  },
+  {
+    "title": "Certificate Distribution",
+    "type": "other",
+    "date": "2026-09-21",
+    "startTime": "",
+    "endTime": "",
+    "venue": "BBDITM E-Block",
+    "summary": "Data Detective participants received their certificates.",
+    "description": "Certificates were presented to the participants of Data Detective in the presence of the Director, Dr. Pratul Arvind, the Head of Department, Dr. Santosh Shukla, and faculty members of the department. The ceremony recognised the participants' effort in the activity.",
+    "highlights": [],
+    "images": [
+      "Certi.jpeg",
+      "Mcerti.jpeg",
+      "Hcerti.jpeg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "certificate-distribution"
+  },
+  {
+    "title": "Data Detective",
+    "type": "tech-event",
+    "date": "2026-09-14",
+    "startTime": "",
+    "endTime": "",
+    "venue": "BBDITM E-Block",
+    "summary": "A team challenge where students cleaned and analysed data to crack a case.",
+    "description": "Data Detective was a peer-to-peer learning activity organised by the ReImagine IT Club for students of the Department of Information Technology and Data Science. Working in teams of two to four, students solved a data \"case\" across three rounds, from cleaning raw data to presenting their conclusions.",
+    "highlights": [
+      "Skills practised: data cleaning, analysis and visualisation, logical reasoning, teamwork, and data storytelling.",
+      "Tools used included Python (Pandas, NumPy, Matplotlib), Google Colab or Jupyter Notebook, and Excel.",
+      "An offline, team-based activity pitched at beginner to intermediate level.",
+      "The Head of Department, Dr. Santosh Shukla, and faculty members supported and encouraged the participants throughout."
+    ],
+    "images": [
+      "Data Detective 3.jpeg",
+      "Data Detective.jpeg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "data-detective"
+  },
+  {
+    "title": "Orientation 2026",
+    "type": "other",
+    "date": "2026-09-02",
+    "startTime": "",
+    "endTime": "",
+    "venue": "BBDITM E-Block",
+    "summary": "An introduction to the department for second-year IT and Data Science students.",
+    "description": "An orientation session for second-year students of the Department of Information Technology and Data Science, held in the presence of the Director, Dr. Pratul Arvind, the Head of Department, Prof. Santosh Shukla, and faculty members. All first-year students take their classes together, so this was the students' first introduction to their own department.",
+    "highlights": [],
+    "images": [
+      "event.jpeg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "orientation"
+  },
+  {
+    "title": "Expert Lecture",
+    "type": "guest-lecture",
+    "date": "2025-05-15",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "venue": "Online",
+    "summary": "",
+    "description": "",
+    "highlights": [],
+    "images": [],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "expert-lecture"
+  },
+  {
+    "title": "Alumni Talk",
+    "type": "alumni-talk",
+    "date": "2025-05-05",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "venue": "Online",
+    "summary": "",
+    "description": "",
+    "highlights": [],
+    "images": [],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "alumni-talk"
+  },
+  {
+    "title": "Institutional Business Plan Competition",
+    "type": "tech-event",
+    "date": "2025-05-01",
+    "startTime": "15:00",
+    "endTime": "16:30",
+    "venue": "Smart Classroom 304, BBDITM E-Block",
+    "summary": "",
+    "description": "ReImagine IT Club organised a business plan competition to build entrepreneurial skills. Students pitched ideas covering the problem, target market, revenue model and implementation plan. The judges were Dr. Usha Sharma (IT Department) and Mr. Deepak Pant (CSE Department).",
+    "highlights": [
+      "Structured judging, with feedback for every participant.",
+      "Winners: 1st Akshat Kishore Mishra, 2nd Kaushal Chaurasia, 3rd Tulika Srivastava.",
+      "Outcomes: more confidence in pitching, stronger presentation and decision-making skills, and interest in startups."
+    ],
+    "images": [
+      "2025-05-01_business-plan-competition/poster.jpg",
+      "2025-05-01_business-plan-competition/photo_01.jpg",
+      "2025-05-01_business-plan-competition/photo_02.jpg",
+      "2025-05-01_business-plan-competition/photo_03.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "institutional-business-plan-competition"
+  },
+  {
+    "title": "Guest Lecture: Integration of AI and ML",
+    "type": "guest-lecture",
+    "date": "2025-04-30",
+    "startTime": "15:00",
+    "endTime": "16:30",
+    "venue": "Online",
+    "summary": "",
+    "description": "Dr. Ashish Dixit, Associate Professor of Computer Science and Engineering at Ajay Kumar Garg Engineering College, Ghaziabad, spoke on using AI and machine learning for business excellence. Over 120 students and faculty joined.",
+    "highlights": [
+      "The difference between AI and ML, explained with real-world examples.",
+      "How both combine with data analytics, using tools such as Tableau and Power BI.",
+      "Use cases in healthcare, finance, logistics and marketing.",
+      "Convened by Dr. Santosh Kumar Shukla, Head of Department, with a live Q&A."
+    ],
+    "images": [
+      "2025-04-30_guest-lecture-ai-ml-business-excellence/poster.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "guest-lecture-integration-of-ai-and-ml"
+  },
+  {
+    "title": "Tech Event",
+    "type": "tech-event",
+    "date": "2025-04-25",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "venue": "Stepper Hall, BBDITM",
+    "summary": "",
+    "description": "",
+    "highlights": [],
+    "images": [],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "tech-event"
+  },
+  {
+    "title": "Industrial Visit to RDSO, Lucknow",
+    "type": "industrial-visit",
+    "date": "2025-04-25",
+    "startTime": "10:00",
+    "endTime": "14:00",
+    "venue": "RDSO, Lucknow",
+    "summary": "",
+    "description": "A final-year project group from the IT Department visited the Research Designs and Standards Organisation (RDSO) to study the Kavach automatic train protection system for their obstacle-detection project. Three students took part.",
+    "highlights": [
+      "Scaled Kavach models, plus RFID tags, on-board control units and track-side equipment.",
+      "Demo videos of automatic braking after red-signal violations and possible collisions.",
+      "Discussion with RDSO engineers on how the system works and where it is heading.",
+      "Takeaways for the project: RFID and GPS for real-time obstacle detection, and fail-safe, redundant design."
+    ],
+    "images": [
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_01.jpg",
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_02.jpg",
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_03.jpg",
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_04.jpg",
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_05.jpg",
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_06.jpg",
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_07.jpg",
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_08.jpg",
+      "2025-04-25_industrial-visit-rdso-lucknow/photo_09.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "industrial-visit-to-rdso-lucknow"
+  },
+  {
+    "title": "Industrial Visit",
+    "type": "industrial-visit",
+    "date": "2025-04-10",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "venue": "TCS Campus, Lucknow",
+    "summary": "",
+    "description": "",
+    "highlights": [],
+    "images": [],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "industrial-visit"
+  },
+  {
+    "title": "Career Guidance",
+    "type": "career-guidance",
+    "date": "2025-03-28",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "venue": "Online",
+    "summary": "",
+    "description": "",
+    "highlights": [],
+    "images": [],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "career-guidance"
+  },
+  {
+    "title": "Expert Talk on Artificial Intelligence",
+    "type": "guest-lecture",
+    "date": "2025-03-27",
+    "startTime": "15:00",
+    "endTime": "16:30",
+    "venue": "Online",
+    "summary": "",
+    "description": "Mr. Sanjay Sisodia of Ayuni Investment & Contracting, Riyadh, Saudi Arabia, gave students and faculty an overview of artificial intelligence. About 100 people attended.",
+    "highlights": [
+      "Types and classification of AI.",
+      "Real-world case studies in healthcare, finance and automation.",
+      "Future scope of AI, with pointers to research and career opportunities.",
+      "Q&A, and a vote of thanks by Dr. Santosh Kumar Shukla, Head of Department."
+    ],
+    "images": [
+      "2025-03-27_expert-talk-artificial-intelligence/poster.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "expert-talk-on-artificial-intelligence"
+  },
+  {
+    "title": "Industrial Talk",
+    "type": "guest-lecture",
+    "date": "2025-03-20",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "venue": "Online",
+    "summary": "",
+    "description": "",
+    "highlights": [],
+    "images": [],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "industrial-talk"
+  },
+  {
+    "title": "Alumni Talk",
+    "type": "alumni-talk",
+    "date": "2024-11-30",
+    "startTime": "",
+    "endTime": "",
+    "venue": "Online, hosted by BBDITM",
+    "summary": "",
+    "description": "An online session with Mr. Shivam Kesharwani, Senior Associate at Cognizant Worldwide Limited, UK. It connected current students with an alumnus for a real-world view of careers and the IT industry.",
+    "highlights": [
+      "Industry insights: current trends, tools, and practices, especially in a global work environment.",
+      "Career guidance: planning a career, building skills, and moving from college to work.",
+      "Global exposure: what working in the UK is like, based on his own experience.",
+      "Networking: students were encouraged to reach out to alumni for mentorship and advice.",
+      "Inspiration: a successful graduate's journey as a model for ambitious goals."
+    ],
+    "images": [
+      "2024-11-30_alumni-talk-shivam-kesharwani/poster.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "alumni-talk-2024-11-30"
+  },
+  {
+    "title": "Industrial Visit to STPI",
+    "type": "industrial-visit",
+    "date": "2024-11-25",
+    "startTime": "",
+    "endTime": "",
+    "venue": "STPI",
+    "summary": "",
+    "description": "Students visited the Plug and Play (PNP) hall, which hosts seminars, workshops, and conferences, then the Network Operating Centre that monitors and manages IT infrastructure, and finished with a presentation on STPI in the conference room.",
+    "highlights": [
+      "Attended by 43 second-year students.",
+      "Presentation on STPI's mission, vision, infrastructure, and facilities.",
+      "Guided tour of the incubation centre and data centre.",
+      "Question and answer session with STPI officials.",
+      "Mr. Satyam explained STPI's objectives and services, including office space, funding support of up to ₹25 lakh, and the Plug and Play model.",
+      "Ms. Disha Srivastava took students through STPI's core infrastructure.",
+      "Mr. Jairam Yadav presented STPI's operating model and opportunities for startups."
+    ],
+    "images": [
+      "2024-11-25_industrial-visit-stpi-lucknow/photo_01.jpg",
+      "2024-11-25_industrial-visit-stpi-lucknow/photo_02.jpg",
+      "2024-11-25_industrial-visit-stpi-lucknow/photo_03.jpg",
+      "2024-11-25_industrial-visit-stpi-lucknow/photo_04.jpg",
+      "2024-11-25_industrial-visit-stpi-lucknow/photo_05.jpg",
+      "2024-11-25_industrial-visit-stpi-lucknow/photo_06.jpg",
+      "2024-11-25_industrial-visit-stpi-lucknow/poster.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "industrial-visit-to-stpi"
+  },
+  {
+    "title": "One Day Workshop: Mastering Research Paper Writing",
+    "type": "workshop",
+    "date": "2024-10-25",
+    "startTime": "",
+    "endTime": "",
+    "venue": "BBDITM",
+    "summary": "",
+    "description": "Led by Dr. Rakesh Kr. Yadav, an expert in research methodology and academic writing, for researchers, academicians, and postgraduate students from different disciplines.",
+    "highlights": [
+      "Step-by-step guidance through the whole process, from choosing a topic to final submission.",
+      "Real-world examples and best practices from Dr. Yadav's experience.",
+      "Outcome: a clearer understanding of how a strong research paper is structured.",
+      "Outcome: practical tips for clarity, precision, and coherence in academic writing."
+    ],
+    "images": [
+      "2024-10-25_workshop-research-paper-writing/poster.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "one-day-workshop-mastering-research-paper-writing"
+  },
+  {
+    "title": "Reimagine Student Club Event",
+    "type": "tech-event",
+    "date": "2024-10-23",
+    "startTime": "",
+    "endTime": "",
+    "venue": "Steppers Hall, BBDITM",
+    "summary": "",
+    "description": "A day that brought cultural, technical, and social activities together, aimed at all-round development of participants.",
+    "highlights": [
+      "Cultural: vocal performances, a fashion show, traditional dance, and poster making on innovation and sustainability.",
+      "Technical: a coding contest, mystery box challenges, and an exhibition of student projects and prototypes.",
+      "Social: debates on current issues, awareness campaigns on the environment and mental health, and sessions on inclusivity.",
+      "Outcomes: awards and certificates, stronger problem-solving and communication, and a collaborative atmosphere.",
+      "Organised by third- and fourth-year IT students and faculty of the IT Department.",
+      "Coding contest winners: 1st Shanu Ojha, 2nd Ashmit Tripathi, 3rd Surya Pratap Singh.",
+      "Debate winners: 1st Shruti Chaurasia, 2nd Geetam, 3rd Tulika Srivastava.",
+      "Poster designing winners: 1st Karan Sharma, 2nd Anand Raj, 3rd Shristi Shahi.",
+      "Vocal winners: 1st Ayush Pratap Singh, 2nd Vishal Chaudhary, 3rd Aqtedar Kazim."
+    ],
+    "images": [
+      "reimagine_images/reimagine_images/photo_05_758x341.jpg",
+      "reimagine_images/reimagine_images/photo_01_717x537.jpg",
+      "reimagine_images/reimagine_images/photo_02_659x494.jpg",
+      "reimagine_images/reimagine_images/photo_03_517x387.jpg",
+      "reimagine_images/reimagine_images/photo_04_494x371.jpg",
+      "reimagine_images/reimagine_images/photo_34.jpg",
+      "reimagine_images/reimagine_images/photo_07_468x624.jpg",
+      "reimagine_images/reimagine_images/photo_37.jpg",
+      "reimagine_images/reimagine_images/photo_09_610x458.jpg",
+      "reimagine_images/reimagine_images/photo_10_491x655.jpg",
+      "reimagine_images/reimagine_images/photo_11_404x539.jpg",
+      "reimagine_images/reimagine_images/photo_12_549x411.jpg",
+      "reimagine_images/reimagine_images/photo_13_583x437.jpg",
+      "reimagine_images/reimagine_images/photo_14_686x514.jpg",
+      "reimagine_images/reimagine_images/photo_15_706x529.jpg",
+      "reimagine_images/reimagine_images/photo_16_575x431.jpg",
+      "reimagine_images/reimagine_images/photo_31.jpg",
+      "reimagine_images/reimagine_images/photo_18_679x429.jpg",
+      "reimagine_images/reimagine_images/photo_19_574x463.jpg",
+      "reimagine_images/reimagine_images/photo_20_495x371.jpg",
+      "reimagine_images/reimagine_images/photo_21_504x378.jpg",
+      "reimagine_images/reimagine_images/photo_22_574x430.jpg",
+      "reimagine_images/reimagine_images/photo_23_639x479.jpg",
+      "reimagine_images/reimagine_images/photo_24_639x479.jpg",
+      "reimagine_images/reimagine_images/ponytail.jpg",
+      "reimagine_images/reimagine_images/photo_27_366x750.jpg",
+      "reimagine_images/reimagine_images/photo_28_513x709.jpg",
+      "reimagine_images/reimagine_images/photo_29_749x716.jpg",
+      "reimagine_images/reimagine_images/photo_30_571x351.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "reimagine-student-club-event"
+  },
+  {
+    "title": "Orientation 2024-25",
+    "type": "other",
+    "date": "2024-09-20",
+    "startTime": "10:00",
+    "endTime": "",
+    "venue": "Smart Classroom (Room 304), BBDITM E-Block",
+    "summary": "",
+    "description": "The IT Department welcomed its second-, third- and fourth-year B.Tech students with an orientation led by faculty members. All faculty and staff took part.",
+    "highlights": [
+      "Department introduction, vision and mission by Dr. Santosh Kumar Shukla, Head of Department.",
+      "Sessions on outcome-based education, project allotment and evaluation, and internal evaluation.",
+      "Training and placement, the mentor-mentee system, NPTEL and higher studies, and the role of alumni.",
+      "Certificates for the top three students of each year."
+    ],
+    "images": [
+      "2024-09-20_it-dept-orientation-2024-25/photo_01.jpg",
+      "2024-09-20_it-dept-orientation-2024-25/photo_02.jpg",
+      "2024-09-20_it-dept-orientation-2024-25/photo_03.jpg",
+      "2024-09-20_it-dept-orientation-2024-25/photo_04.jpg",
+      "2024-09-20_it-dept-orientation-2024-25/photo_05.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "orientation-2024-25"
+  },
+  {
+    "title": "Guest Lecture: Innovation and Prototype Validation",
+    "type": "guest-lecture",
+    "date": "2024-08-29",
+    "startTime": "",
+    "endTime": "",
+    "venue": "BBDITM",
+    "summary": "",
+    "description": "Dr. Saurabh Kr. Srivastava explained why innovation matters and how a prototype is checked for feasibility, function, and market readiness.",
+    "highlights": [
+      "Innovation: what it means and its types (product, process, and business model).",
+      "Prototype development: the path from idea to prototype, common challenges, and iterative design.",
+      "Validation: its goals and methods, including functional testing, user feedback, and market analysis.",
+      "Tools, techniques, and key performance indicators for judging a prototype's success."
+    ],
+    "images": [
+      "2024-08-29_guest-lecture-prototype-validation/poster.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "guest-lecture-innovation-and-prototype-validation"
+  },
+  {
+    "title": "Guest Lecture: Prototype and Process Design",
+    "type": "guest-lecture",
+    "date": "2024-05-11",
+    "startTime": "",
+    "endTime": "",
+    "venue": "BBDITM",
+    "summary": "",
+    "description": "A one-day session led by Dr. Hitesh Kesarwani on design methods and practical ways to develop prototypes and processes, linking theory to practice through iterative design and user feedback.",
+    "highlights": [
+      "Group exercises on brainstorming and solving industry-style problems.",
+      "Expert guidance on best practices, common pitfalls, and personal experience.",
+      "Informal sessions for networking with other participants."
+    ],
+    "images": [
+      "2024-05-11_workshop-prototype-process-design/poster.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "guest-lecture-prototype-and-process-design"
+  },
+  {
+    "title": "Alumni Talk: Current Industry Trends",
+    "type": "alumni-talk",
+    "date": "2024-03-15",
+    "startTime": "",
+    "endTime": "",
+    "venue": "Smart Room, BBDITM",
+    "summary": "",
+    "description": "Mr. Rahul Kumar Yadav, an alumnus and Senior Software Developer at TCS Mumbai, spoke to third- and fourth-year students about industry trends and career opportunities.",
+    "highlights": [
+      "AI and automation, and the shift to remote and hybrid work.",
+      "Sustainability, corporate social responsibility, e-commerce growth and personalised customer experience.",
+      "Telehealth and workplace wellness, followed by a Q&A on careers."
+    ],
+    "images": [
+      "2024-03-15_alumni-talk-rahul-kumar-yadav/photo_01.jpg",
+      "2024-03-15_alumni-talk-rahul-kumar-yadav/photo_02.jpg",
+      "2024-03-15_alumni-talk-rahul-kumar-yadav/photo_03.jpg",
+      "2024-03-15_alumni-talk-rahul-kumar-yadav/photo_04.jpg",
+      "2024-03-15_alumni-talk-rahul-kumar-yadav/photo_05.jpg",
+      "2024-03-15_alumni-talk-rahul-kumar-yadav/photo_06.jpg",
+      "2024-03-15_alumni-talk-rahul-kumar-yadav/photo_07.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "alumni-talk-current-industry-trends"
+  },
+  {
+    "title": "Industrial Visit to TCS, Lucknow",
+    "type": "industrial-visit",
+    "date": "2024-02-20",
+    "startTime": "",
+    "endTime": "",
+    "venue": "TCS Lucknow",
+    "summary": "",
+    "description": "Thirty-five third-year IT students visited TCS Lucknow, coordinated by Mr. Grijesh Kumar Mishra, to see how a large IT services company works.",
+    "highlights": [
+      "An introduction to the IT industry and corporate culture.",
+      "An overview of the software development life cycle.",
+      "Emerging technologies: cloud computing, AI and data analytics.",
+      "How projects are managed and teams work in industry."
+    ],
+    "images": [],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "industrial-visit-to-tcs-lucknow"
+  },
+  {
+    "title": "Guest Lecture: Machine Learning",
+    "type": "guest-lecture",
+    "date": "2023-10-11",
+    "startTime": "11:00",
+    "endTime": "12:30",
+    "venue": "Online (Google Meet)",
+    "summary": "",
+    "description": "Dr. Gaurav, Assistant Professor at SRMCEM Lucknow, introduced machine learning to IT students. Over 80 students and 11 faculty members attended.",
+    "highlights": [
+      "The three types of ML: supervised, unsupervised and reinforcement learning.",
+      "Applications in healthcare, finance, recommendations and autonomous driving.",
+      "The ML project workflow and common challenges such as data bias and overfitting.",
+      "Q&A on careers, Python and TensorFlow."
+    ],
+    "images": [
+      "2023-10-11_guest-lecture-machine-learning/meet-screenshots/screenshot_01.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "guest-lecture-machine-learning"
+  },
+  {
+    "title": "Workshop: Intellectual Property Rights, Patents and Design Filing",
+    "type": "workshop",
+    "date": "2023-09-30",
+    "startTime": "10:00",
+    "endTime": "12:30",
+    "venue": "Online",
+    "summary": "",
+    "description": "Mrs. Pooja Vishal Maulikar, Examiner of Patents and Designs at RGNIIPM, Nagpur, led the session under the guidance of Dr. S.S. Chauhan, Director of BBDITM, with Ms. Nida Hasib as coordinator. About 150 students and faculty took part.",
+    "highlights": [
+      "Tangible and intangible property, patents, copyright, trademarks and geographical indications.",
+      "A case study of filing and granting a patent application.",
+      "The forms used when filing a patent."
+    ],
+    "images": [
+      "2023-09-30_workshop-ipr-patents-design-filing/poster.jpg",
+      "2023-09-30_workshop-ipr-patents-design-filing/meet-screenshots/screenshot_01.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "workshop-intellectual-property-rights-patents-and-design-fil"
+  },
+  {
+    "title": "Orientation 2023-24",
+    "type": "other",
+    "date": "2023-09-27",
+    "startTime": "09:00",
+    "endTime": "",
+    "venue": "Smart Classroom (Room 304), BBDITM E-Block",
+    "summary": "",
+    "description": "The IT Department welcomed its second-, third- and fourth-year B.Tech students with an orientation on the department's vision and mission, academics and facilities. All faculty and staff took part.",
+    "highlights": [
+      "The curriculum, examination system and laboratories.",
+      "Research and innovation opportunities in the department.",
+      "Rules, attendance requirements and code of conduct.",
+      "Clubs, workshops and seminars open to students."
+    ],
+    "images": [
+      "2023-09-27_it-dept-orientation-2023-24/poster.jpg",
+      "2023-09-27_it-dept-orientation-2023-24/photo_01.jpg",
+      "2023-09-27_it-dept-orientation-2023-24/photo_02.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "orientation-2023-24"
+  },
+  {
+    "title": "Alumni Talk: Shivam Gupta",
+    "type": "alumni-talk",
+    "date": "2023-09-25",
+    "startTime": "10:00",
+    "endTime": "12:30",
+    "venue": "Smart Classroom (Room 304), BBDITM E-Block",
+    "summary": "",
+    "description": "Mr. Shivam Gupta, alumnus and founder of Tech Puro, spoke to third- and fourth-year IT students about careers and entrepreneurship. About 60 students attended; Ms. Richa Sharma coordinated.",
+    "highlights": [
+      "Internships, placements, resume building and interview preparation.",
+      "Communication, networking and continuous learning.",
+      "Startup culture, followed by a Q&A."
+    ],
+    "images": [
+      "2023-09-25_alumni-talk-shivam-gupta/poster.jpg"
+    ],
+    "facts": [],
+    "registerLabel": "",
+    "registerUrl": "",
+    "secondaryLabel": "",
+    "secondaryUrl": "",
+    "slug": "alumni-talk-shivam-gupta"
+  }
+]

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="robots" content="noindex, nofollow">
+ <title>ReImagine Admin</title>
+ <link rel="icon" type="image/svg+xml" href="Site_Images/logo.svg">
+ <link rel="stylesheet" href="./style.css">
+ <link rel="stylesheet" href="./admin.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="adm-body">
+
+<div class="adm-top">
+ <a class="logo" href="./">ReImagine</a>
+ <span class="adm-tag">Admin</span>
+ <span id="who" class="adm-who"></span>
+ <button id="signout" type="button" class="btn btn-secondary" hidden>Sign out</button>
+</div>
+
+<main class="adm">
+
+ <!-- Shown until firebase-config.js is filled in -->
+ <section id="view-setup" class="adm-card" hidden>
+  <h1>Setup needed</h1>
+  <p>Firebase isn't connected yet. Follow SETUP.md, then paste your project settings into <code>firebase-config.js</code> and reload this page.</p>
+ </section>
+
+ <section id="view-signin" class="adm-card" hidden>
+  <h1>Club admin</h1>
+  <p>Only ReImagine members can add or edit events. Sign in with the Google account your president added.</p>
+  <button id="signin" type="button" class="btn btn-primary">Sign in with Google</button>
+  <p id="signin-msg" class="adm-msg" role="alert"></p>
+ </section>
+
+ <section id="view-denied" class="adm-card" hidden>
+  <h1>Not on the members list</h1>
+  <p><strong id="denied-email"></strong> isn't a member yet. Ask a club admin to add this exact Google email, then sign in again.</p>
+  <button id="denied-signout" type="button" class="btn btn-secondary">Sign out</button>
+ </section>
+
+ <section id="view-app" hidden>
+  <div class="adm-tabs" role="tablist">
+   <button type="button" id="tab-events-btn" class="active" role="tab">Events</button>
+   <button type="button" id="tab-alumni-btn" role="tab">Alumni</button>
+   <button type="button" id="tab-members-btn" role="tab" hidden>Members</button>
+   <a href="./" class="adm-link">View site</a>
+  </div>
+
+  <!-- EVENTS -->
+  <div id="tab-events">
+   <div id="import-card" class="adm-card" hidden>
+    <h2>Import the current events</h2>
+    <p>No events are saved yet. Import the events that are already written on the site (upcoming and past) so you can edit them here.</p>
+    <button id="import-btn" type="button" class="btn btn-primary">Import events</button>
+    <p id="import-msg" class="adm-msg" role="status"></p>
+   </div>
+
+   <form id="event-form" class="adm-card" novalidate>
+    <h2 id="form-title">Add an event</h2>
+    <div class="adm-grid">
+     <label class="wide">Title
+      <input id="f-title" type="text" maxlength="200" required placeholder="e.g. Hacktoberfest Hack Day">
+     </label>
+     <label>Category
+      <select id="f-type"></select>
+     </label>
+     <label>Date
+      <input id="f-date" type="date" required>
+     </label>
+     <label>Start time <span class="opt">(optional)</span>
+      <input id="f-start" type="time">
+     </label>
+     <label>End time <span class="opt">(optional)</span>
+      <input id="f-end" type="time">
+     </label>
+     <label class="wide">Venue <span class="opt">(or "Online")</span>
+      <input id="f-venue" type="text" maxlength="200" placeholder="e.g. Stepper Hall, BBDITM">
+     </label>
+     <label class="wide">One-line summary <span class="opt">(optional, shown on the home page cards)</span>
+      <input id="f-summary" type="text" maxlength="300" placeholder="e.g. Students toured TCS Lucknow to see industry practice first-hand">
+     </label>
+     <label class="wide">Full description <span class="opt">(optional, shown on the upcoming card and the past events page)</span>
+      <textarea id="f-description" rows="5" maxlength="5000" placeholder="Two or three sentences about the event"></textarea>
+     </label>
+     <label class="wide">Highlights <span class="opt">(optional, one per line)</span>
+      <textarea id="f-highlights" rows="4" placeholder="Key point one&#10;Key point two"></textarea>
+     </label>
+     <label class="wide">Photos <span class="opt">(optional, one path per line, first one is the cover)</span>
+      <textarea id="f-images" rows="4" placeholder="my-event/poster.jpg&#10;my-event/photo_01.jpg"></textarea>
+     </label>
+     <div class="wide">
+      <p class="adm-hint adm-hint-flush">Photos are not uploaded here. Add the image files to the website repo on GitHub inside <code>Site_ Images/Events_Images/</code>, then type each file's path below that folder, for example <code>2026-10-23_hack-day/poster.jpg</code>. A full <code>https://</code> link also works. The previews below show whether each path is found.</p>
+      <div id="f-img-preview" class="adm-thumbs"></div>
+     </div>
+    </div>
+
+    <h3 class="adm-sub">Upcoming event card <span class="opt">(optional)</span></h3>
+    <div class="adm-grid">
+     <label class="wide">Key facts <span class="opt">(one per line as Label: value)</span>
+      <textarea id="f-facts" rows="4" placeholder="Time: 10:00 AM to 5:00 PM IST&#10;Open to: BBD students&#10;Bring: Laptop and college ID"></textarea>
+     </label>
+     <label>Main button text
+      <input id="f-reg-label" type="text" maxlength="40" placeholder="Register">
+     </label>
+     <label>Main button link
+      <input id="f-url" type="url" placeholder="https://forms.gle/...">
+     </label>
+     <label>Second button text
+      <input id="f-sec-label" type="text" maxlength="40" placeholder="See challenges">
+     </label>
+     <label>Second button link
+      <input id="f-sec-url" type="url" placeholder="https://...">
+     </label>
+    </div>
+
+    <h3 class="adm-sub">Publishing</h3>
+    <div class="adm-grid">
+     <label>Visibility
+      <select id="f-status">
+       <option value="published">Published (visible on the site)</option>
+       <option value="draft">Draft (hidden until you publish)</option>
+      </select>
+     </label>
+     <label>Link name <span class="opt">(optional, auto-filled)</span>
+      <input id="f-slug" type="text" maxlength="60" placeholder="e.g. tcs-industry-visit">
+     </label>
+    </div>
+    <p class="adm-hint">Times are India time. The site moves an event from Upcoming to Past once its end time has passed. With no end time, that happens at the end of the event's date. The link name is the part after <code>#</code> in <code>pastEvents.html#link-name</code>; leave it empty and it is made from the title.</p>
+    <div class="adm-actions">
+     <button id="save-btn" type="submit" class="btn btn-primary">Save event</button>
+     <button id="cancel-edit" type="button" class="btn btn-secondary" hidden>Cancel editing</button>
+    </div>
+    <p id="form-msg" class="adm-msg" role="status"></p>
+   </form>
+
+   <h2 class="adm-h2">All events</h2>
+   <p id="events-empty" class="adm-hint" hidden>No events yet.</p>
+   <div id="event-list"></div>
+  </div>
+
+  <!-- ALUMNI -->
+  <div id="tab-alumni" hidden>
+   <div id="alumni-import-card" class="adm-card" hidden>
+    <h2>Import the current past members</h2>
+    <p>No alumni are saved yet. Import the people already written on the Past members page so you can edit them here.</p>
+    <button id="alumni-import-btn" type="button" class="btn btn-primary">Import past members</button>
+    <p id="alumni-import-msg" class="adm-msg" role="status"></p>
+   </div>
+
+   <form id="alumni-form" class="adm-card" novalidate>
+    <h2 id="alumni-form-title">Add a past member</h2>
+    <div class="adm-grid">
+     <label class="half">Name
+      <input id="a-name" type="text" maxlength="120" required placeholder="e.g. Arshiya Khan">
+     </label>
+     <label class="half">Role
+      <input id="a-role" type="text" maxlength="80" required list="a-role-list" placeholder="e.g. President">
+      <datalist id="a-role-list"></datalist>
+     </label>
+     <label>Year <span class="opt">(e.g. 2024–25)</span>
+      <input id="a-year" type="text" maxlength="12" required list="a-year-list" placeholder="2025–26">
+      <datalist id="a-year-list"></datalist>
+     </label>
+     <label>Order <span class="opt">(optional)</span>
+      <input id="a-order" type="number" min="1" max="999" step="1" placeholder="1 = first">
+     </label>
+     <label class="half">Visibility
+      <select id="a-status">
+       <option value="published">Published (visible on the site)</option>
+       <option value="draft">Draft (hidden until you publish)</option>
+      </select>
+     </label>
+     <label class="half">Photo <span class="opt">(optional)</span>
+      <input id="a-photo" type="text" maxlength="300" placeholder="Pres2025.png">
+     </label>
+     <label class="half">LinkedIn <span class="opt">(optional)</span>
+      <input id="a-linkedin" type="url" placeholder="https://www.linkedin.com/in/...">
+     </label>
+     <div class="wide">
+      <p class="adm-hint adm-hint-flush">Photos are not uploaded here. Add the image to the website repo on GitHub inside <code>Site_Images/Team_Members/LegacyTeam/</code>, then type just the file name, for example <code>Pres2025.png</code>. A full <code>https://</code> link also works. With no photo, the card shows the person's initials. Order decides who appears first within a year; leave it empty to add them at the end.</p>
+      <div id="a-photo-preview" class="adm-thumbs"></div>
+     </div>
+    </div>
+    <div class="adm-actions">
+     <button id="alumni-save-btn" type="submit" class="btn btn-primary">Save</button>
+     <button id="alumni-cancel-edit" type="button" class="btn btn-secondary" hidden>Cancel editing</button>
+    </div>
+    <p id="alumni-form-msg" class="adm-msg" role="status"></p>
+   </form>
+
+   <h2 class="adm-h2">All past members</h2>
+   <p id="alumni-empty" class="adm-hint" hidden>No past members yet.</p>
+   <div id="alumni-list"></div>
+  </div>
+
+  <!-- MEMBERS (admins only) -->
+  <div id="tab-members" hidden>
+   <div class="adm-card">
+    <h2>Add a member</h2>
+    <p class="adm-hint">Use the exact Google email they will sign in with. Members can add and edit events. Admins can also manage this list.</p>
+    <form id="member-form" class="adm-inline" novalidate>
+     <input id="m-email" type="email" required placeholder="name@gmail.com" aria-label="Member email">
+     <select id="m-role" aria-label="Role">
+      <option value="member">Member</option>
+      <option value="admin">Admin</option>
+     </select>
+     <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    <p id="member-msg" class="adm-msg" role="status"></p>
+   </div>
+   <h2 class="adm-h2">Current members</h2>
+   <div id="member-list"></div>
+  </div>
+ </section>
+
+</main>
+
+<script type="module" src="./admin.js"></script>
+</body>
+</html>

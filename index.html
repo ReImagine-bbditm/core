@@ -5,17 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ReImagine | Student Club at BBDITM</title>
 <meta name="description" content="ReImagine is a student-led technology club at BBDITM. See our events, meet the team, and join us.">
-<link rel="icon" type="image/svg+xml" href="./Site_ Images/logo.svg">
+<link rel="icon" type="image/svg+xml" href="Site_Images/logo.svg">
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./Additions.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
    <script src="./app.js"></script>
-<style>
-/* Recent event cards are links now. You can move these two rules into Additions.css. */
-a.event-card{color:inherit;text-decoration:none;cursor:pointer}
-a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offset:3px}
-</style>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -60,7 +55,7 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
   <h2 class="intro">About us</h2>
   <div class="card-container">
    <div class="img-container">
-    <img src="./Site_ Images/Collective_Image.jpeg" alt="ReImagine members working together" loading="lazy">
+    <img src="Site_Images/Collective_Image.jpeg" alt="ReImagine members working together" loading="lazy">
    </div>
    <div class="card-contents">
     <h3 class="about-title">Who we are</h3>
@@ -132,9 +127,12 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
   <h2 class="intro">Events</h2>
   <div class="events-wrap">
    <h3 class="events-sub">Upcoming</h3>
+<!-- Fallback copy. events.js replaces the contents of #upcoming-list and #recent-list with the events saved
+        in the admin page (see SETUP.md), so edit events there, not here. -->
+<div id="upcoming-list">
 <article class="event-card featured">
   <div class="event-card-img">
-    <img src="./Site_ Images/Events_Images/HackDay2_IST_connected.jpg"
+    <img src="Site_Images/Events_Images/HackDay2_IST_connected.jpg"
          alt="Poster for Hacktoberfest Hack Day Lucknow, 23 October 2026" loading="lazy">
   </div>
   <div class="event-card-body">
@@ -162,13 +160,14 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
         </div>
   </div>
 </article>
+</div>
 
    <h3 class="events-sub">Recent events</h3>
-   <div class="event-grid">
+   <div class="event-grid" id="recent-list">
 
   <a class="event-card side" href="./pastEvents.html#tcs-industry-visit">
     <div class="event-card-img">
-      <img src="./Site_ Images/Events_Images/TCS visit.jpeg" alt="">
+      <img src="Site_Images/Events_Images/TCS visit.jpeg" alt="">
     </div>
     <div class="event-card-body">
       <h4>TCS Industry Visit</h4>
@@ -179,7 +178,7 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
 
   <a class="event-card side" href="./pastEvents.html#certificate-distribution">
     <div class="event-card-img">
-      <img src="./Site_ Images/Events_Images/Certi.jpeg" alt="">
+      <img src="Site_Images/Events_Images/Certi.jpeg" alt="">
     </div>
     <div class="event-card-body">
       <h4>Certificate Distribution</h4>
@@ -190,7 +189,7 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
 
   <a class="event-card side" href="./pastEvents.html#data-detective">
     <div class="event-card-img">
-      <img src="./Site_ Images/Events_Images/Data Detective 3.jpeg" alt="">
+      <img src="Site_Images/Events_Images/Data Detective 3.jpeg" alt="">
     </div>
     <div class="event-card-body">
       <h4>Data Detective</h4>
@@ -201,7 +200,7 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
 
   <a class="event-card side" href="./pastEvents.html#orientation">
     <div class="event-card-img">
-      <img src="./Site_ Images/Events_Images/event.jpeg" alt="">
+      <img src="Site_Images/Events_Images/event.jpeg" alt="">
     </div>
     <div class="event-card-body">
       <h4>Orientation</h4>
@@ -223,21 +222,21 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
     </h3>
     </div> -->
     <div class="container team-grid">
- <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/GS.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Naavya Srivastava</h3><p class="card-designation">General Secretary</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Naavya Srivastava on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
- <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/COGS.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Arun Kumar</h3><p class="card-designation">Co-General Secretary</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Arun Kumar on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
- <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/TH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Divyanshi Shrivastava</h3><p class="card-designation">Technical Lead</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Divyanshi Shrivastava on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+ <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/GS.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Naavya Srivastava</h3><p class="card-designation">General Secretary</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Naavya Srivastava on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+ <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/COGS.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Arun Kumar</h3><p class="card-designation">Co-General Secretary</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Arun Kumar on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+ <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/TH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Divyanshi Shrivastava</h3><p class="card-designation">Technical Lead</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Divyanshi Shrivastava on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
 
- <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/shubhmanGill.png" alt=""></div><div class="intro"><h3 class="card-name">Shubham Pratap Singh</h3><p class="card-designation">Management Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Shubham on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+ <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/shubhmanGill.png" alt=""></div><div class="intro"><h3 class="card-name">Shubham Pratap Singh</h3><p class="card-designation">Management Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Shubham on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
 
-  <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/MH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Adarsh Yadav</h3><p class="card-designation">Management Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Adarsh Yadav on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+  <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/MH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Adarsh Yadav</h3><p class="card-designation">Management Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Adarsh Yadav on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
 
-   <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/EH2.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Siddharth Trivedi</h3><p class="card-designation">Event Organizing Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Siddharth on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+   <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/EH2.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Siddharth Trivedi</h3><p class="card-designation">Event Organizing Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Siddharth on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
 
-    <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/EH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Khusagra Gupta</h3><p class="card-designation">Event Organizing Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Khusagra on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+    <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/EH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Khusagra Gupta</h3><p class="card-designation">Event Organizing Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Khusagra on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
 
-     <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/CH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Ayush Shrivastava</h3><p class="card-designation">Creative Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Ayush on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+     <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/CH.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Ayush Shrivastava</h3><p class="card-designation">Creative Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Ayush on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
 
-          <div class="box"><div class="card-image-container avatar"><img src="./Site_ Images/Team_Members/CH2.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Divyata Pandey</h3><p class="card-designation">Creative Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Ayush on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
+          <div class="box"><div class="card-image-container avatar"><img src="Site_Images/Team_Members/CH2.jpeg" alt=""></div><div class="intro"><h3 class="card-name">Divyata Pandey</h3><p class="card-designation">Creative Head</p><a class="card-linkedin" href="#" target="_blank" rel="noopener" aria-label="Ayush on LinkedIn"><svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></div></div>
 </div>
  <div class="section-cta"><a class="btn btn-secondary" href="./previousTeams.html">Meet Our Alumni</a></div>
  </section>
@@ -247,40 +246,40 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
   <div class="container">
    <!-- To add a photo, replace the text with: <img src="./gallery_images/your-photo.jpg" alt="Describe the photo" loading="lazy"> -->
    <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/Industry visit.jpeg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/Industry visit.jpeg" alt="" loading="lazy">
    </div></div>
    <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/Data Detective.jpeg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/Data Detective.jpeg" alt="" loading="lazy">
    </div></div>
    <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/reimagine_images/reimagine_images/Definitive Event.jpg" alt="">
+     <img src="Site_Images/Events_Images/reimagine_images/reimagine_images/Definitive Event.jpg" alt="">
    </div></div>
                  <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/reimagine_images/reimagine_images/nerds.jpg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/reimagine_images/reimagine_images/nerds.jpg" alt="" loading="lazy">
    </div></div>
       <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/reimagine_images/reimagine_images/photo_31.jpg" alt="">
+     <img src="Site_Images/Events_Images/reimagine_images/reimagine_images/photo_31.jpg" alt="">
    </div></div>
       <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/director.jpeg" alt="">
+     <img src="Site_Images/Events_Images/director.jpeg" alt="">
    </div></div>
       <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/hod.jpeg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/hod.jpeg" alt="" loading="lazy">
    </div></div>
                  <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/reimagine_images/reimagine_images/Definitive lite.jpg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/reimagine_images/reimagine_images/Definitive lite.jpg" alt="" loading="lazy">
    </div></div>
         <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/reimagine_images/reimagine_images/photo_34.jpg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/reimagine_images/reimagine_images/photo_34.jpg" alt="" loading="lazy">
    </div></div>
         <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/reimagine_images/reimagine_images/photo_33.jpg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/reimagine_images/reimagine_images/photo_33.jpg" alt="" loading="lazy">
    </div></div>
         <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/reimagine_images/reimagine_images/ponytail.jpg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/reimagine_images/reimagine_images/ponytail.jpg" alt="" loading="lazy">
    </div></div>
            <div class="box" id="gallery-cards"><div class="card-image-container tile">
-     <img src="./Site_ Images/Events_Images/reimagine_images/reimagine_images/Def3.jpg" alt="" loading="lazy">
+     <img src="Site_Images/Events_Images/reimagine_images/reimagine_images/Def3.jpg" alt="" loading="lazy">
    </div></div>
 
 
@@ -341,5 +340,6 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
  <div class="footer-bottom"><p>&copy; 2026 ReImagine, BBDITM. </p></div>
 </footer>
 <script src="./Stars.js" defer></script>
+<script type="module" src="./events.js"></script>
 </body>
 </html>
