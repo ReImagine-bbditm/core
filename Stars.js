@@ -82,6 +82,9 @@
   var cA = 1, sA = 0, cB = 1, sB = 0, uiFade = 0, hw = 0, hh = 0, pj = { x: 0, y: 0, f: 1, z: 0 };
   // The frame, label, rings and links follow the shape that has actually formed, not the one just requested
   var hudSi = 0, hudReadyAt = 0, hudWord = 0, hwFrom = 0, hwTo = 0, hwT0 = 0;
+  // Small flat pictures (bulb, hammer, logo...) on phones: shrink the dots with the picture, otherwise the glows
+  // overlap and the colours burn out to white. dkFlat is the dot scale for a picture; dk eases towards it.
+  var flatS = 200, dkFlat = 1, dk = 1, FLAT_REF = 240, FLAT_MIN = 0.38;
   function hwTarget(L) { return clamp(Math.max(R3 * 1.5, (L.maxX - L.minX) / 2 + 50), 60, Math.max(60, W / 2 - 14)); }
 
   function rnd(a, b) { return a + Math.random() * (b - a); }
@@ -135,11 +138,18 @@
       hl.style.maskImage = 'none';
     }
     root.classList.add('stars-revealed');
+    showButtons();
+  }
+  // Fades in everything marked data-stars-fade (subtitle + buttons). The styles are set directly on the
+  // elements, so this works whichever CSS rule (stars-revealed or stars-buttons) your stylesheet uses.
+  function showButtons() {
     root.classList.add('stars-buttons');
+    var els = document.querySelectorAll('[data-stars-fade]');
+    for (var i = 0; i < els.length; i++) { els[i].style.opacity = '1'; els[i].style.transform = 'none'; }
   }
   setTimeout(finishReveal, REVEAL_FAILSAFE * 1000);   // failsafe: never leave the page hidden
-  // Buttons do not wait for the headline: show them early
-  setTimeout(function () { root.classList.add('stars-buttons'); }, BUTTONS_AT * 1000);
+  // Buttons do not wait for the headline or the story: show them early
+  setTimeout(showButtons, BUTTONS_AT * 1000);
 
   /* ---------- quality governor ---------- */
   function resizeCanvas() {
@@ -589,6 +599,8 @@
     slotH = sr.height;
     // keep the shape (and its rings and HUD) inside the hero: clear of the navbar above and the headline below
     R3 = clamp(Math.min(slotH * 0.36, W * 0.28, (cy0 - 14) / 1.3), 70, 240);
+    flatS = Math.max(40, Math.min(Math.ceil(slotH * 0.85), Math.floor(cy0 * 2 - 24)));   // same size the pictures are drawn at
+    dkFlat = clamp(flatS / FLAT_REF, FLAT_MIN, 1);
     hw = 0;
     gen++; layouts = {};
     A = [];
@@ -729,6 +741,7 @@
     // orbital rings with satellites (they fade away while a word is showing)
     if (t >= hudReadyAt) hudSi = si;
     hudWord += ((is3D(SEQ[hudSi]) ? 0 : 1) - hudWord) * Math.min(1, dt * 3);
+    dk += ((isFlat(SEQ[hudSi]) ? dkFlat : 1) - dk) * Math.min(1, dt * 3);
     var shapeAmt = (1 - hudWord * 0.85) * uiFade, ri, rr, seg, sat, rd, cta, sta, ctb, stb, u;
     if (shapeAmt > 0.02) {
       ctx.strokeStyle = 'rgb(125,249,255)';
@@ -798,9 +811,9 @@
       var b = bandX !== null ? Math.exp(-Math.pow((sx - bandX) / 60, 2)) : 0;
       var sc = SCAN ? Math.exp(-Math.pow((sy - scanY) / 22, 2)) * uiFade : 0;
       var al = 0.8 * dep * (0.35 + 0.65 * settle) * (1 - settle * 0.25 + settle * 0.25 * tw) * (1 + 1.1 * p.h + 1.3 * b + 1.8 * sc);
-      var sz = p.sz * 2.6 * f * (0.85 + 0.15 * settle) * (1 + 0.6 * p.h + 0.7 * b + 0.5 * sc);
+      var sz = p.sz * 2.6 * f * dk * (0.85 + 0.15 * settle) * (1 + 0.6 * p.h + 0.7 * b + 0.5 * sc);
       p.sx = sx; p.sy = sy; p.sf = f; p.sd = dep;
-      dot(sx, sy, sz, Math.min(1, al), p.s);
+      dot(sx, sy, sz, Math.min(1, al * (0.55 + 0.45 * dk)), p.s);
     }
 
     // network: a handful of bright nodes joined by thin lines when they drift close
