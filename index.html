@@ -244,7 +244,9 @@
  <section id="Gallery">
   <h2 class="intro">Gallery</h2>
   <div class="container">
-   <!-- To add a photo, replace the text with: <img src="./gallery_images/your-photo.jpg" alt="Describe the photo" loading="lazy"> -->
+   <!-- Fallback copy. gallery.js replaces these tiles with 6 photos from the collection saved in the admin page
+        (Gallery tab) and swaps one every few seconds, so add, remove and reorder photos there, not here.
+        These tiles are only used if Firebase is not set up, is empty, or cannot be reached. -->
    <div class="box" id="gallery-cards"><div class="card-image-container tile">
      <img src="Site_Images/Events_Images/Industry visit.jpeg" alt="" loading="lazy">
    </div></div>
@@ -341,5 +343,6 @@
 </footer>
 <script src="./Stars.js" defer></script>
 <script type="module" src="./events.js"></script>
+<script type="module" src="./gallery.js"></script>
 </body>
 </html>

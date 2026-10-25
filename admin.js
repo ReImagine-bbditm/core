@@ -1,4 +1,4 @@
-// Members-only admin page: Google sign-in, add/edit/delete events and alumni, manage the members list.
+// Members-only admin page: Google sign-in, add/edit/delete events, alumni and gallery photos, manage the members list.
 // The real security is in firestore.rules. This page only decides what to show.
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
@@ -12,6 +12,7 @@ import {
 import {
   cleanPhotoPath, photoSrc, safeLink, normYear, validYear, sortAlumni,
 } from './alumni-logic.js';
+import { cleanGalleryPath, gallerySrc, sortPhotos } from './gallery-logic.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -64,6 +65,8 @@ function start() {
   let editingId = null;
   let alumni = [];
   let editingAlumniId = null;
+  let gallery = [];
+  let editingGalleryId = null;
 
   // ---------- sign in / out ----------
   $('signin').onclick = async () => {
@@ -96,6 +99,7 @@ function start() {
     show('view-app');
     await loadEvents();
     await loadAlumni();
+    await loadGallery();
     if (me.admin) await loadMembers();
   });
 
@@ -103,13 +107,16 @@ function start() {
   function tab(name) {
     $('tab-events').hidden = name !== 'events';
     $('tab-alumni').hidden = name !== 'alumni';
+    $('tab-gallery').hidden = name !== 'gallery';
     $('tab-members').hidden = name !== 'members';
     $('tab-events-btn').classList.toggle('active', name === 'events');
     $('tab-alumni-btn').classList.toggle('active', name === 'alumni');
+    $('tab-gallery-btn').classList.toggle('active', name === 'gallery');
     $('tab-members-btn').classList.toggle('active', name === 'members');
   }
   $('tab-events-btn').onclick = () => tab('events');
   $('tab-alumni-btn').onclick = () => tab('alumni');
+  $('tab-gallery-btn').onclick = () => tab('gallery');
   $('tab-members-btn').onclick = () => tab('members');
 
   // ---------- events ----------
@@ -468,6 +475,208 @@ function start() {
     } catch (e) {
       say('alumni-import-msg', 'Import failed: ' + (e.code || e.message));
       $('alumni-import-btn').disabled = false;
+    }
+  };
+
+  // ---------- gallery ----------
+  async function loadGallery() {
+    try {
+      const snap = await getDocs(collection(db, 'gallery'));
+      gallery = sortPhotos(snap.docs.map((d) => ({ id: d.id, ...d.data() })).filter((p) => p.image));
+      renderGallery();
+    } catch (e) {
+      say('gallery-form-msg', 'Could not load the gallery (' + (e.code || e.message) + '). If this says "permission-denied", add the gallery rule to firestore.rules and publish it.');
+    }
+  }
+
+  function renderGallery() {
+    $('gallery-import-card').hidden = gallery.length > 0;
+    $('gallery-empty').hidden = gallery.length > 0;
+    const live = gallery.filter((p) => p.status === 'published').length;
+    $('gallery-count').textContent = gallery.length
+      ? live + ' of ' + gallery.length + ' photos are published. The home page shows 6 at a time' + (live > 6 ? ' and swaps one every few seconds.' : '.')
+      : '';
+
+    $('gallery-list').replaceChildren(...gallery.map((p, i) => {
+      const draft = p.status !== 'published';
+      const src = gallerySrc(p.image);
+      let thumb;
+      if (src) {
+        thumb = el('img', { class: 'gthumb', src, alt: '', loading: 'lazy' });
+        thumb.onerror = () => { thumb.replaceWith(el('span', { class: 'gthumb bad', text: 'Not found' })); };
+      } else {
+        thumb = el('span', { class: 'gthumb bad', text: 'Not allowed' });
+      }
+      const up = el('button', { type: 'button', text: '↑', title: 'Move up', 'aria-label': 'Move up' });
+      up.disabled = i === 0;
+      up.onclick = () => moveGallery(i, -1);
+      const down = el('button', { type: 'button', text: '↓', title: 'Move down', 'aria-label': 'Move down' });
+      down.disabled = i === gallery.length - 1;
+      down.onclick = () => moveGallery(i, 1);
+      const edit = el('button', { type: 'button', text: 'Edit' });
+      edit.onclick = () => startGalleryEdit(p);
+      const publish = el('button', { type: 'button', text: draft ? 'Publish' : 'Unpublish' });
+      publish.onclick = () => setGalleryStatus(p, draft ? 'published' : 'draft');
+      const del = el('button', { type: 'button', class: 'danger', text: 'Delete' });
+      del.onclick = () => removeGallery(p);
+      return el('div', { class: 'adm-row' },
+          thumb,
+          el('span', { class: 'badge' + (draft ? ' draft' : ''), text: draft ? 'Draft' : '#' + (i + 1) }),
+          el('div', { class: 'info' }, el('strong', { text: p.caption || p.image }), p.caption ? el('span', { text: p.image }) : null),
+          el('div', { class: 'acts' }, up, down, edit, publish, del));
+    }));
+  }
+
+  // Swap with the neighbour, then renumber everything 1, 2, 3... so the order is always clean.
+  async function moveGallery(i, dir) {
+    const j = i + dir;
+    if (j < 0 || j >= gallery.length) return;
+    const list = gallery.slice();
+    [list[i], list[j]] = [list[j], list[i]];
+    try {
+      const batch = writeBatch(db);
+      list.forEach((p, k) => {
+        if (p.order !== k + 1) batch.set(doc(db, 'gallery', p.id), { order: k + 1, updatedAt: serverTimestamp(), updatedBy: me.email }, { merge: true });
+      });
+      await batch.commit();
+      await loadGallery();
+    } catch (e) {
+      say('gallery-form-msg', 'Could not change the order: ' + (e.code || e.message));
+    }
+  }
+
+  async function setGalleryStatus(p, status) {
+    try {
+      await setDoc(doc(db, 'gallery', p.id), { status, updatedAt: serverTimestamp(), updatedBy: me.email }, { merge: true });
+      await loadGallery();
+    } catch (e) {
+      say('gallery-form-msg', 'Could not change visibility: ' + (e.code || e.message));
+    }
+  }
+
+  async function removeGallery(p) {
+    if (!confirm('Remove "' + (p.caption || p.image) + '" from the gallery? The image file stays in the repo.')) return;
+    try {
+      await deleteDoc(doc(db, 'gallery', p.id));
+      if (editingGalleryId === p.id) resetGalleryForm();
+      await loadGallery();
+    } catch (e) {
+      say('gallery-form-msg', 'Could not delete: ' + (e.code || e.message));
+    }
+  }
+
+  function renderGalleryPreview() {
+    $('g-preview').replaceChildren(...lines($('g-photos').value).map((raw) => {
+      const path = cleanGalleryPath(raw);
+      const src = gallerySrc(path);
+      if (!src) return el('span', { class: 'adm-thumb bad', text: 'Not allowed: ' + raw });
+      const img = el('img', { src, alt: path, title: path, loading: 'lazy' });
+      const box = el('span', { class: 'adm-thumb' }, img);
+      img.onerror = () => { box.className = 'adm-thumb bad'; box.replaceChildren('Not found: ' + path); };
+      return box;
+    }));
+  }
+  $('g-photos').addEventListener('input', renderGalleryPreview);
+
+  function resetGalleryForm() {
+    editingGalleryId = null;
+    $('gallery-form').reset();
+    $('g-preview').replaceChildren();
+    $('gallery-form-title').textContent = 'Add photos';
+    $('gallery-save-btn').textContent = 'Save';
+    $('gallery-cancel-edit').hidden = true;
+  }
+
+  function startGalleryEdit(p) {
+    editingGalleryId = p.id;
+    $('g-photos').value = p.image || '';
+    $('g-caption').value = p.caption || '';
+    $('g-order').value = p.order ?? '';
+    $('g-status').value = p.status || 'published';
+    renderGalleryPreview();
+    $('gallery-form-title').textContent = 'Edit photo';
+    $('gallery-save-btn').textContent = 'Save changes';
+    $('gallery-cancel-edit').hidden = false;
+    say('gallery-form-msg', '');
+    $('gallery-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  $('gallery-cancel-edit').onclick = resetGalleryForm;
+
+  $('gallery-form').onsubmit = async (e) => {
+    e.preventDefault();
+    say('gallery-form-msg', '');
+
+    const paths = [...new Set(lines($('g-photos').value).map(cleanGalleryPath))];
+    const caption = $('g-caption').value.trim();
+    const orderRaw = $('g-order').value.trim();
+    const status = $('g-status').value;
+
+    if (!paths.length) { say('gallery-form-msg', 'Please enter at least one photo path.'); return; }
+    const bad = paths.find((p) => !gallerySrc(p));
+    if (bad) { say('gallery-form-msg', 'This photo path is not allowed: ' + bad); return; }
+    if (orderRaw && !(Number.isInteger(Number(orderRaw)) && Number(orderRaw) >= 1)) { say('gallery-form-msg', 'Order must be a whole number, 1 or more.'); return; }
+    if (editingGalleryId && paths.length > 1) { say('gallery-form-msg', 'Edit one photo at a time. Cancel editing to add several.'); return; }
+
+    const taken = new Set(gallery.filter((p) => p.id !== editingGalleryId).map((p) => p.image));
+    const fresh = paths.filter((p) => !taken.has(p));
+    if (!fresh.length) { say('gallery-form-msg', paths.length > 1 ? 'Those photos are already in the gallery.' : 'This photo is already in the gallery.'); return; }
+    const skipped = paths.length - fresh.length;
+
+    const last = Math.max(0, ...gallery.map((p) => (Number.isFinite(p.order) ? p.order : 0)));
+    $('gallery-save-btn').disabled = true;
+    try {
+      if (editingGalleryId) {
+        const old = gallery.find((p) => p.id === editingGalleryId) || {};
+        await setDoc(doc(db, 'gallery', editingGalleryId), {
+          image: fresh[0], caption, status,
+          order: orderRaw ? Number(orderRaw) : (Number.isFinite(old.order) ? old.order : last + 1),
+          updatedAt: serverTimestamp(), updatedBy: me.email,
+        }, { merge: true });
+      } else {
+        const batch = writeBatch(db);
+        fresh.forEach((image, k) => {
+          batch.set(doc(collection(db, 'gallery')), {
+            image, caption, status,
+            order: orderRaw && fresh.length === 1 ? Number(orderRaw) : last + 1 + k,
+            createdAt: serverTimestamp(), updatedAt: serverTimestamp(), updatedBy: me.email,
+          });
+        });
+        await batch.commit();
+      }
+      const what = fresh.length > 1 ? fresh.length + ' photos' : 'The photo';
+      say('gallery-form-msg',
+        (status === 'published' ? what + ' saved. ' + (fresh.length > 1 ? 'They are' : 'It is') + ' live on the site.' : what + ' saved as ' + (fresh.length > 1 ? 'drafts' : 'a draft') + '. Not visible on the site yet.')
+        + (skipped ? ' ' + skipped + ' already in the gallery, skipped.' : ''), true);
+      resetGalleryForm();
+      await loadGallery();
+    } catch (ex) {
+      say('gallery-form-msg', 'Could not save: ' + (ex.code || ex.message));
+    } finally {
+      $('gallery-save-btn').disabled = false;
+    }
+  };
+
+  // ---------- one-time import of the current gallery photos ----------
+  $('gallery-import-btn').onclick = async () => {
+    if (gallery.length) return;
+    $('gallery-import-btn').disabled = true;
+    say('gallery-import-msg', 'Importing...', true);
+    try {
+      const res = await fetch('./seed-gallery.json');
+      if (!res.ok) throw new Error('seed-gallery.json not found');
+      const list = await res.json();
+      const batch = writeBatch(db);
+      for (const p of list) {
+        batch.set(doc(collection(db, 'gallery')), {
+          ...p, status: 'published', createdAt: serverTimestamp(), updatedAt: serverTimestamp(), updatedBy: me.email,
+        });
+      }
+      await batch.commit();
+      say('gallery-import-msg', 'Imported ' + list.length + ' photos.', true);
+      await loadGallery();
+    } catch (e) {
+      say('gallery-import-msg', 'Import failed: ' + (e.code || e.message));
+      $('gallery-import-btn').disabled = false;
     }
   };
 

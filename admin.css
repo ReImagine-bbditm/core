@@ -177,3 +177,16 @@ html::-webkit-scrollbar-thumb:hover, #event-list::-webkit-scrollbar-thumb:hover 
   .adm-grid > label:has(> #f-slug) { grid-column: 1 / -1; }
   #alumni-list { grid-template-columns: 1fr; }
 }
+/* Gallery tab */
+#gallery-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: .45rem .75rem; }
+#gallery-list .adm-row { padding: .45rem .75rem; margin-bottom: 0; border-radius: 10px; gap: .4rem .75rem; }
+#gallery-list .adm-row .info { flex: 1 1 140px; }
+#gallery-list .adm-row .info strong { font-size: .95rem; }
+#gallery-list .adm-row .info span { font-size: .8rem; overflow-wrap: anywhere; }
+#gallery-list .adm-row .acts { gap: .35rem; }
+#gallery-list .adm-row .acts button { padding: .25rem .6rem; font-size: .8rem; }
+#gallery-list .adm-row .acts button:disabled { opacity: .35; cursor: default; }
+#gallery-list .adm-row .acts button:disabled:hover { border-color: var(--border); }
+.gthumb { flex: none; width: 64px; height: 48px; object-fit: cover; border-radius: 6px; background: var(--card-bg-strong); border: 1px solid var(--border); }
+.gthumb.bad { display: grid; place-items: center; font-size: .65rem; color: #ff8a7a; border-color: #ff6a5a; text-align: center; }
+@media (max-width: 640px) { #gallery-list { grid-template-columns: 1fr; } }

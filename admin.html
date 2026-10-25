@@ -45,6 +45,7 @@
   <div class="adm-tabs" role="tablist">
    <button type="button" id="tab-events-btn" class="active" role="tab">Events</button>
    <button type="button" id="tab-alumni-btn" role="tab">Alumni</button>
+   <button type="button" id="tab-gallery-btn" role="tab">Gallery</button>
    <button type="button" id="tab-members-btn" role="tab" hidden>Members</button>
    <a href="./" class="adm-link">View site</a>
   </div>
@@ -194,6 +195,51 @@
    <h2 class="adm-h2">All past members</h2>
    <p id="alumni-empty" class="adm-hint" hidden>No past members yet.</p>
    <div id="alumni-list"></div>
+  </div>
+
+  <!-- GALLERY -->
+  <div id="tab-gallery" hidden>
+   <div id="gallery-import-card" class="adm-card" hidden>
+    <h2>Import the current gallery photos</h2>
+    <p>No gallery photos are saved yet. Import the photos already written in the Gallery section of the home page so you can manage them here.</p>
+    <button id="gallery-import-btn" type="button" class="btn btn-primary">Import gallery photos</button>
+    <p id="gallery-import-msg" class="adm-msg" role="status"></p>
+   </div>
+
+   <form id="gallery-form" class="adm-card" novalidate>
+    <h2 id="gallery-form-title">Add photos</h2>
+    <div class="adm-grid">
+     <label class="wide">Photo paths <span class="opt">(one per line, so you can add many at once)</span>
+      <textarea id="g-photos" rows="4" placeholder="2026-10-23_hack-day/photo_01.jpg&#10;2026-10-23_hack-day/photo_02.jpg"></textarea>
+     </label>
+     <label class="half">Caption <span class="opt">(optional, read out by screen readers; used for every photo added at once)</span>
+      <input id="g-caption" type="text" maxlength="200" placeholder="e.g. Hack Day 2026">
+     </label>
+     <label>Order <span class="opt">(optional)</span>
+      <input id="g-order" type="number" min="1" max="9999" step="1" placeholder="1 = first">
+     </label>
+     <label>Visibility
+      <select id="g-status">
+       <option value="published">Published</option>
+       <option value="draft">Draft (hidden)</option>
+      </select>
+     </label>
+     <div class="wide">
+      <p class="adm-hint adm-hint-flush">Photos are not uploaded here. Add the images to the website repo on GitHub inside <code>Site_Images/Events_Images/</code>, then type each file's path below that folder, for example <code>2026-10-23_hack-day/photo_01.jpg</code>. A full <code>https://</code> link also works. The home page shows 6 photos at a time and swaps one every few seconds, so the whole collection gets shown. Order decides which photos show first; leave it empty to add at the end.</p>
+      <div id="g-preview" class="adm-thumbs"></div>
+     </div>
+    </div>
+    <div class="adm-actions">
+     <button id="gallery-save-btn" type="submit" class="btn btn-primary">Save</button>
+     <button id="gallery-cancel-edit" type="button" class="btn btn-secondary" hidden>Cancel editing</button>
+    </div>
+    <p id="gallery-form-msg" class="adm-msg" role="status"></p>
+   </form>
+
+   <h2 class="adm-h2">All gallery photos</h2>
+   <p id="gallery-count" class="adm-hint"></p>
+   <p id="gallery-empty" class="adm-hint" hidden>No gallery photos yet.</p>
+   <div id="gallery-list"></div>
   </div>
 
   <!-- MEMBERS (admins only) -->
