@@ -28,6 +28,9 @@
   var INTRO_WORD = 'ReImagine';
   // Safety net: if the story has not reached INTRO_WORD by then (slow device, error), show the headline anyway.
   var REVEAL_FAILSAFE = 45;      // seconds
+  // The buttons (and anything else that should not wait for the story) appear this many seconds after the page loads,
+  // by adding the class "stars-buttons" to <html>. Set to 0 to show them immediately.
+  var BUTTONS_AT = 1.5;          // seconds
   // Shown still when the visitor prefers reduced motion (no animation)
   var STATIC_WORD = 'ReImagine';
   // white, cyan, blue, violet, then the two logo blues (dark wing, light wing)
@@ -54,7 +57,9 @@
   var PERSP = 900;           // perspective strength
   var INTRO_SPREAD = 1.8;    // seconds over which dots launch at the start
   var MORPH_SPREAD = 0.8;    // same, when changing shape
-  var SWEEP = 1.4;           // duration of the light sweep / headline reveal
+  var SWEEP = 1.6;           // seconds for the light band to cross the word; the headline reveal and its sparks follow the same band
+  var SPARK_RATE = 2;        // sparks emitted per frame while the band is over the headline
+  var SPARK_FADE = 3.2;      // higher = sparks vanish sooner
   var SHAPE_HOLD = 1.9;      // pause on each shape (seconds)
   var WORD_HOLD = 1.3;       // pause on each word
   var HOME_HOLD = 4;         // pause on the logo (the end of the story)
@@ -71,7 +76,7 @@
   var t = 0, t0 = 0, last = 0, raf = null, started = false, visible = true;
   var si = 0, tNextMorph = 1e9;
   var ang = 0, spinSpeed = SPIN, wordness = 0, tiltX = 0, tiltY = 0;
-  var sweepStart = -1, revealed = false;
+  var sweepStart = -1, sweepL = null, revealed = false;
   var mx = -9999, my = -9999, mxs = -9999, mys = -9999, mIn = false, mAct = 0;
   var q = 0, slowFrames = 0, winFrames = 0, dprCap = lite ? 1.5 : 2, crc = null;
   var cA = 1, sA = 0, cB = 1, sB = 0, uiFade = 0, hw = 0, hh = 0, pj = { x: 0, y: 0, f: 1, z: 0 };
@@ -130,8 +135,11 @@
       hl.style.maskImage = 'none';
     }
     root.classList.add('stars-revealed');
+    root.classList.add('stars-buttons');
   }
   setTimeout(finishReveal, REVEAL_FAILSAFE * 1000);   // failsafe: never leave the page hidden
+  // Buttons do not wait for the headline: show them early
+  setTimeout(function () { root.classList.add('stars-buttons'); }, BUTTONS_AT * 1000);
 
   /* ---------- quality governor ---------- */
   function resizeCanvas() {
@@ -548,8 +556,12 @@
     });
   }
 
+  // How long each shape stays formed. The intro word stays a bit longer so the
+  // light sweep and headline reveal finish before the dots move on.
   function holdFor(name) {
-    return name === 'logo' ? HOME_HOLD : (isWord(name) ? WORD_HOLD : SHAPE_HOLD);
+    if (name === 'logo') return HOME_HOLD;
+    if (name === INTRO_WORD) return WORD_HOLD + 1.0;
+    return isWord(name) ? WORD_HOLD : SHAPE_HOLD;
   }
 
   function goTo(idx) {
@@ -560,7 +572,10 @@
     tNextMorph = t + MORPH_SPREAD + 0.9 + holdFor(name);
     hudReadyAt = t + 1.0;                              // dots have mostly arrived by then
     hwFrom = hw; hwTo = hwTarget(curL); hwT0 = t + 0.15;  // the frame starts resizing with the dots
-    if (name === INTRO_WORD && !revealed && sweepStart < 0) sweepStart = t + MORPH_SPREAD + 1.0;
+    if (name === INTRO_WORD && !revealed && sweepStart < 0) {
+      sweepStart = t + MORPH_SPREAD + 0.7;
+      sweepL = curL;                                   // the light band measures itself against this word
+    }
   }
 
   /* ---------- build / run ---------- */
@@ -587,7 +602,7 @@
     if (raf) cancelAnimationFrame(raf);
     if (!started) { t0 = performance.now(); t = 0; last = 0; started = true; }
     build();
-    P = []; sparks = [];
+    P = []; sparks = []; sweepL = null;
     if (!formed && !reduce) si = 0;
     if (reduce) si = Math.max(0, SEQ.indexOf(STATIC_WORD));
     curL = getLayout(SEQ[si]);
@@ -603,7 +618,10 @@
       assign(curL, INTRO_SPREAD);
       tNextMorph = t + INTRO_SPREAD + 1.8;
       // Only needed when the story opens on INTRO_WORD (goTo() starts the reveal for every later word).
-      if (SEQ[si] === INTRO_WORD && !revealed && sweepStart < 0) sweepStart = t + INTRO_SPREAD + 0.4;
+      if (SEQ[si] === INTRO_WORD && !revealed && sweepStart < 0) {
+        sweepStart = t + INTRO_SPREAD + 0.4;
+        sweepL = curL;
+      }
     }
     if (!reduce) { var g = gen; setTimeout(function () { precompute(g); }, 1200); }
     raf = requestAnimationFrame(draw);
@@ -638,24 +656,28 @@
     }
 
     // light sweep + headline reveal
-    var bandX = null, hR = 0, rE = 0;
+    // One band drives everything: it crosses the word, and the headline is revealed
+    // (with its glow and sparks) in the same screen column as the band, so they stay in sync.
+    var bandX = null, glowX = null, glowRc = null;
     if (sweepStart >= 0 && t >= sweepStart) {
       var s = t - sweepStart;
+      var sl = sweepL || curL;                          // band is locked to the word it started on
       var nameR = clamp(s / SWEEP);
-      hR = clamp((s - 0.35) / SWEEP);
-      rE = ease(hR);
-      if (nameR > 0 && nameR < 1) bandX = cx0 + curL.minX - 80 + nameR * (curL.maxX - curL.minX + 160);
+      if (nameR > 0 && nameR < 1) bandX = cx0 + sl.minX - 80 + nameR * (sl.maxX - sl.minX + 160);
       if (!revealed) {
-        setReveal(rE);
-        if (hl && hR > 0 && hR < 1) {
+        if (hl && bandX !== null) {
           var rc = hl.getBoundingClientRect();
-          var fx = rc.left - cr.left + rc.width * clamp(1.3 * rE - 0.15);
-          for (k = 0; k < 3; k++) {
-            sparks.push({ x: fx + rnd(-6, 6), y: rnd(rc.top - cr.top, rc.bottom - cr.top), vx: rnd(-40, 40),
-                          vy: rnd(-60, 20), life: 1, sz: rnd(3, 6), s: sprites[(Math.random() * 3) | 0] });
+          var frac = (bandX - (rc.left - cr.left)) / Math.max(1, rc.width);   // band position along the headline
+          setReveal(clamp((frac + 0.15) / 1.3));        // the mask edge sits exactly at the band
+          if (frac > -0.05 && frac < 1.05) {            // band is over the headline: glow + sparks
+            glowX = bandX; glowRc = rc;
+            for (k = 0; k < SPARK_RATE; k++) {
+              sparks.push({ x: bandX + rnd(-6, 6), y: rnd(rc.top - cr.top, rc.bottom - cr.top), vx: rnd(-40, 40),
+                            vy: rnd(-60, 20), life: 1, sz: rnd(3, 6), s: sprites[(Math.random() * 3) | 0] });
+            }
           }
         }
-        if (hR >= 1) finishReveal();
+        if (nameR >= 1) finishReveal();                 // band has left the word: headline is fully shown
       }
       if (s > SWEEP + 0.6) sweepStart = -1;
     }
@@ -848,20 +870,18 @@
     }
 
     // sweep glow on the headline + sparks
-    if (hl && !revealed && hR > 0 && hR < 1) {
-      var r2 = hl.getBoundingClientRect();
-      var bx = r2.left - cr.left + r2.width * clamp(1.3 * rE - 0.15);
-      var gr = ctx.createLinearGradient(bx - 40, 0, bx + 40, 0);
+    if (glowX !== null && glowRc) {
+      var gr = ctx.createLinearGradient(glowX - 40, 0, glowX + 40, 0);
       gr.addColorStop(0, 'rgba(125,249,255,0)');
       gr.addColorStop(0.5, 'rgba(125,249,255,0.45)');
       gr.addColorStop(1, 'rgba(125,249,255,0)');
       ctx.globalAlpha = 1;
       ctx.fillStyle = gr;
-      ctx.fillRect(bx - 40, r2.top - cr.top - 12, 80, r2.height + 24);
+      ctx.fillRect(glowX - 40, glowRc.top - cr.top - 12, 80, glowRc.height + 24);
     }
     for (i = sparks.length - 1; i >= 0; i--) {
       var sp = sparks[i];
-      sp.life -= dt * 1.4;
+      sp.life -= dt * SPARK_FADE;
       if (sp.life <= 0) { sparks.splice(i, 1); continue; }
       sp.x += sp.vx * dt; sp.y += sp.vy * dt;
       dot(sp.x, sp.y, sp.sz * sp.life + 1, sp.life, sp.s);

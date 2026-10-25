@@ -536,3 +536,15 @@ footer {
   color: var(--text-secondary);
   font-size: 0.85rem;
 }
+/* Themed scrollbars (page + events list) */
+html, #event-list { scrollbar-gutter: auto; }
+html::-webkit-scrollbar, #event-list::-webkit-scrollbar { width: 10px; height: 10px; }
+html::-webkit-scrollbar-track, #event-list::-webkit-scrollbar-track { background: transparent; }
+html::-webkit-scrollbar-thumb, #event-list::-webkit-scrollbar-thumb {
+  background: var(--card-bg-strong); border: 1px solid var(--border); border-radius: 999px;
+}
+html::-webkit-scrollbar-thumb:hover, #event-list::-webkit-scrollbar-thumb:hover { background: var(--accent); border-color: var(--accent); }
+/* Firefox */
+@supports not selector(::-webkit-scrollbar) {
+  html, #event-list { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+}
