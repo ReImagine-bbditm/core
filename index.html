@@ -12,6 +12,7 @@
 <link rel="apple-touch-icon" href="/Site_Images/apple-touch-icon.png">
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./Additions.css">
+<link rel="stylesheet" href="./nav-dropdown.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
    <script src="./app.js"></script>
@@ -27,12 +28,25 @@
   <div class="logo"><a href="./index.html">ReImagine</a></div>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   <nav>
+   <!-- Paste in place of <ul id="nav-links"> ... </ul> on index.html -->
    <ul id="nav-links">
     <li><a href="#hero-section">Home</a></li>
     <li><a href="#About">About</a></li>
-    <!-- <li><a href="#Services">What we do</a></li> -->
-    <li><a href="#Events">Events</a></li>
-    <li><a href="#Team">Team</a></li>
+    <li class="has-sub">
+     <a href="#Events">Events</a>
+     <ul class="sub-menu">
+      <li><a href="#Events">Upcoming</a></li>
+      <li><a href="./pastEvents.html">Past events</a></li>
+      <li><a href="./showcase.html">Showcase</a></li>
+     </ul>
+    </li>
+    <li class="has-sub">
+     <a href="#Team">Team</a>
+          <ul class="sub-menu">
+      <li><a href="#Team">Current team</a></li>
+      <li><a href="./previousTeams.html">Alumni</a></li>
+     </ul>
+    </li>
     <li><a href="#Gallery">Gallery</a></li>
     <li><a href="#Contact">Join</a></li>
    </ul>
@@ -50,7 +64,7 @@
 <div class="hero-buttons" data-stars-fade>
    <div class="nav-buttons">
     <a class="btn btn-primary" href="#Contact">Join us</a>
-    <a class="btn btn-secondary" href="#Events">See events</a>
+    <a class="btn btn-secondary" href="#Events">See Events</a>
    </div>
   </div>
   </div>
@@ -215,7 +229,7 @@
   </a>
 
 </div>
-<div class="section-cta"><a class="btn btn-secondary" href="./pastEvents.html">See our past events</a></div>
+<div class="section-cta"><a class="btn btn-secondary" href="./pastEvents.html">See Our Past Events</a> </div>
    
  </section>
 
@@ -349,5 +363,6 @@
 <script src="./Stars.js" defer></script>
 <script type="module" src="./events.js"></script>
 <script type="module" src="./gallery.js"></script>
+<script src="./nav-dropdown.js" defer></script>
 </body>
 </html>

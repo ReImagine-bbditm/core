@@ -1,0 +1,434 @@
+{
+ "sections": [
+  {
+   "id": "hack-day-2026",
+   "title": "Hacktoberfest Hack Day 2026",
+   "order": 1,
+   "blurb": "Hacktoberfest Hack Day, Lucknow x BBDITM, 23 October 2026. Students built AI projects in a single day with open models. Teams, prize categories and links come from the official MLH submissions page.",
+   "link": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions",
+   "linkLabel": "See the MLH submissions"
+  }
+ ],
+ "projects": [
+  {
+   "section": "hack-day-2026",
+   "title": "Dastavez",
+   "team": "Aditya Pratap Singh, Sarthak Srivastava, Ashutosh Kumar, Himanshu Bharadwaj",
+   "tags": [
+    "ElevenLabs"
+   ],
+   "award": "Winner: Best Project Built with ElevenLabs",
+   "repo": "https://github.com/adityapratap1811/Dastavez",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1680c-c1df-a548-95d8-fde0972a1be5",
+   "order": 1
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "SNORR",
+   "team": "Abhigyan Gautam, Raj Singh, Aditi Anand, Aryan Rai",
+   "tags": [
+    "Gemma 4"
+   ],
+   "award": "Winner: Best Use of Gemma 4",
+   "repo": "https://github.com/raiaryanashish2304-maker/SNORR",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16821-1512-37ea-586e-acee02121319",
+   "order": 2
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "CONTEXTOS",
+   "team": "Harshit Tiwari",
+   "tags": [
+    "Open-source AI"
+   ],
+   "award": "Winner: Best Open-Source AI Project",
+   "demo": "https://contextos-project.vercel.app/",
+   "repo": "https://github.com/harshittiwari880833-netizen/contextos-project",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1682b-ae5e-bd90-68dc-c255985ef3f8",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a1682b-ae31-08a2-b445-d34966161ed8/01a1682b-bc2e-4fe0-5f71-c0f74bacf06d_03e0a861177b.jpg",
+   "order": 3
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Virtual Brain",
+   "team": "Saksham Pandey, Ananya Singh",
+   "tags": [
+    "Gemma 4"
+   ],
+   "demo": "https://brain.shashwatniranjan.com",
+   "repo": "https://github.com/shashwatniranjan-max/VirtualBrain",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a167c6-3788-fb3b-ae7f-c59aa80321ca",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a167c6-374a-11b4-20b2-3bf8cd184f8c/01a167c6-475b-471f-2aca-bc80fe1b915b_32f5640625cc.jpg",
+   "order": 4
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "EIGHT: AI Crash-Test Lab",
+   "team": "Shivansh Dubey, Prakhar Jain, Palak Kushwaha, Rati Dwivedi",
+   "tags": [
+    "Gemma 4",
+    "Open-source AI"
+   ],
+   "description": "Empirical reliability evaluation comparing Single-Agent vs Multi-Agent pipelines against deterministic, AST-audited Python ground truth.",
+   "demo": "https://drive.google.com/drive/folders/1e69U62l8g5_djktAjb64XW8IkNABMF6Y",
+   "demoLabel": "Files",
+   "repo": "https://github.com/ShivanshDubey2003/eight",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a167e9-caa3-a207-9475-08736ff7c017",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a167e8-43df-5a2f-9528-77f68ed53537/01a1680b-860e-f6df-12f2-417a208bac8c_b7057a224bdc.jpg",
+   "order": 5
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Yatra Saathi",
+   "team": "HARISH VERMA, Madhav Yadav, Mo Sabbir Ansari",
+   "tags": [
+    "ElevenLabs"
+   ],
+   "description": "A voice-first, multilingual travel companion for tourists.",
+   "repo": "https://github.com/harishverma05/yatra_saathi",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1680d-7d0e-ae03-386e-fcf4142056ec",
+   "order": 6
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Edusense-AI",
+   "team": "Taukir Alam, Mukund Nath Tripathi, Khushi Singh, Satyam Dubey",
+   "tags": [
+    "Gemma 4"
+   ],
+   "repo": "https://github.com/taukiralamyt07/edusense-ai",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1680e-d585-de43-7a6a-3fb969d76117",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a1680e-d555-4562-4ddd-59d5a0ded2ef/01a1680e-f455-9834-026f-9e43239e4cce_35b45f723af1.jpg",
+   "order": 7
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "NoteBuddy",
+   "team": "Ramkesh Gupta",
+   "tags": [
+    "Open-source AI"
+   ],
+   "demo": "https://youtu.be/K48UGp2HbJY",
+   "demoLabel": "Video",
+   "repo": "https://github.com/ramkeshgupta/NoteBuddy",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16811-0697-ef04-4c31-5a2b165a52a4",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a16811-0662-3edf-2f48-c4d76180b587/01a16811-1ae2-0354-4972-ebbc28889fe9_6c8d82d38e5c.jpg",
+   "order": 8
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Exam prep tracker",
+   "team": "Adarsh Prajapati, Ayush Kumar",
+   "tags": [
+    "Gemma 4"
+   ],
+   "demo": "https://exam-prep-tracker-neon.vercel.app/",
+   "repo": "https://github.com/prajapatiadarsh021/exam-prep-tracker",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16813-3735-87aa-163d-4d525e4b6671",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a16813-3704-569e-d657-3adac07506c4/01a16813-3b7e-6420-26dc-0de418a8cd45_2e0779257638.jpg",
+   "order": 9
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "CIVICXON",
+   "team": "Sanskar Maurya, SHIVAM JAISWAL, Akanksha Gupta, Sanvi Singh",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/sanskarmaurya952-cloud/CIVICXON",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16816-4c64-3f08-c67f-8bb65bb2d21f",
+   "order": 10
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "CampusAI: AI-Powered College Study Assistant",
+   "team": "Amandeep Yadav",
+   "tags": [
+    "Open-source AI"
+   ],
+   "demo": "https://aman26032005-campusai-app-bz1jjt.streamlit.app/",
+   "repo": "https://github.com/aman26032005/CampusAI",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16816-b5d7-3bdd-2682-968302332fac",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a16816-b584-6842-396c-4dd50e0b1f8b/01a16816-dacf-2d3c-a569-26b58a75884a_ec8fbeadcd45.jpg",
+   "order": 11
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "OrbitSentinel Multimodal Satellite Surveillance",
+   "team": "Vishal maurya, Varsha Srivastava, vishal Kumar verma",
+   "tags": [
+    "Open-source AI"
+   ],
+   "demo": "https://theoxvishal.github.io/Lucknow-geospatial-ai/",
+   "repo": "https://github.com/THEOxVISHAL/Lucknow-geospatial-ai",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16819-728b-d37f-0adf-06ad99e3c131",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a16819-724b-cc51-0ec9-63ea84031486/01a16819-8516-887e-c1cf-844fdcb68343_6c940b4d3c2d.jpg",
+   "order": 12
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Cyclone-Intelligence-System",
+   "team": "Prateek Trivedi",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/Prateektrivedi22/Cyclone-Intelligence-System",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1681a-e8b1-4615-68f5-ffbfbf5037aa",
+   "order": 13
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "NEXUS: Open-Weight AI Financial Identity & Trust Network",
+   "team": "Arslan Ahmad, Arshi Idrisi, ANUSHKA RAJ, MOHAMMAD SAHIL",
+   "tags": [
+    "Open-source AI"
+   ],
+   "demo": "https://nexus-snowy-phi-76.vercel.app/",
+   "repo": "https://github.com/arslaanahmad2005-dotcom/Nexus",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1681b-8f24-d6d0-89eb-20480839f468",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a1681b-8ef7-e15f-c3a9-da1de3d7fb90/01a1681b-9c28-d8a2-7f53-d123569c4b5b_f67c8ab6b689.jpg",
+   "order": 14
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "CivicLens-AI",
+   "team": "Md Shahbaaz Khan, Chhavi Kushwaha, Diksha Katiyar",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/HeyyShahbaaz/CivicLens-AI",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1681c-b479-95a4-25e8-e21abdca3877",
+   "order": 15
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "FaultDoctor",
+   "team": "RAVI KISHAN KUMAR, Rahul Pandey, Abhishek Patel",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/patel-abhishek-dev/FaultDoctor",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1681d-4124-980d-993c-3bd4a6b3658f",
+   "order": 16
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "DawaLens",
+   "team": "Anshuman Yadav, Roshan Singh, Abhinav Prajapati, Sahil Gaurav",
+   "tags": [
+    "Gemma 4"
+   ],
+   "repo": "https://github.com/sahilgaurav18/DawaLens",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1681d-7355-153d-a3be-242f7a098e16",
+   "order": 17
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Netra Ai",
+   "team": "Anshika Dubey, Arush Trivedi, Akanksha Singh",
+   "tags": [
+    "Gemma 4"
+   ],
+   "repo": "https://github.com/arush495/Netra--AI-",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1681f-6ea4-05a1-7dad-e96388230252",
+   "order": 18
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "VoxTale",
+   "team": "Om Singh, Prashant singh, Shashank Kumar Samdarshi",
+   "tags": [
+    "ElevenLabs"
+   ],
+   "repo": "https://github.com/prash2920/VoxTale",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16820-0595-60bb-068b-f1b35c6ea2fb",
+   "order": 19
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "FoodLoop AI",
+   "team": "Priyanshu Mishra",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/mishraji11307-oss/FoodLoop-AI",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16821-c4f0-6eae-17b8-9faba798b98a",
+   "order": 20
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Care.AI",
+   "team": "Saksham Pandey",
+   "tags": [
+    "Gemma 4",
+    "ElevenLabs"
+   ],
+   "repo": "https://github.com/sakshamp413-hash/Care.AI",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16821-e6fe-b55a-4e55-179a75b85c33",
+   "order": 21
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "NEXUS: AI-Powered Work Memory",
+   "team": "Ashutosh Singh",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/luckyverma7683-prog/NEXUS-WorkMemory",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16821-fd57-2a91-0a6b-3670653190ef",
+   "order": 22
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Voxora",
+   "team": "Yogesh Negi",
+   "tags": [
+    "ElevenLabs"
+   ],
+   "repo": "https://github.com/yogeshnegi314-dot/MLH-voxara",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16822-36ad-11fb-a77c-0d2d17c5ba44",
+   "order": 23
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "socio-hub",
+   "team": "Samarth Jaiswal, Shashank Singh, Shivam Kumar, Ritesh Kumar Singh",
+   "tags": [
+    "Gemma 4"
+   ],
+   "repo": "https://github.com/shivxdev/Socio-hub",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16822-7fd9-5915-d9a5-572df6e955db",
+   "order": 24
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Campus-Awaaz",
+   "team": "Md Hamid Azam",
+   "tags": [
+    "ElevenLabs"
+   ],
+   "demo": "https://campus-awaaz-git-main-mdhamidazams-projects.vercel.app/",
+   "repo": "https://github.com/MdHamidAzam/Campus-Awaaz",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16823-3318-863d-3be4-09819071f8c9",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a16823-32e1-ec39-6910-9f98c5b6340c/01a16823-4369-c7c7-7bc2-7d72989e695f_3123c33c41b6.jpg",
+   "order": 25
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Krishak",
+   "team": "Gauri Singh",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/Gaurisingh-tech/krishak",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16824-6d5c-94f1-808d-07eb535134e6",
+   "order": 26
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Digital Scam Detection System (NetSuraksha)",
+   "team": "Aayush Sharma",
+   "tags": [
+    "Open-source AI"
+   ],
+   "demo": "https://digital-scam-prevention-system.vercel.app",
+   "repo": "https://github.com/Aayush-coder32/digital-Scam-Prevention-System",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16825-26ae-161a-5c0a-168acdd5fc3f",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a16825-2678-a29f-e1cb-d71716837903/01a16825-32d4-5e48-ff64-04fd9f54e633_33dce0f6eb00.jpg",
+   "order": 27
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "AirFare Intelligence Platform",
+   "team": "Gagandeep Sharma, Hamid Khan, Janardhan Pandey",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/Gagguverse/AIRFARE",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16825-4953-72aa-541d-3f358a599e6a",
+   "order": 28
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "CampusMind-AI",
+   "team": "Rambabu Yadav, Divyansh Yadav",
+   "tags": [
+    "Gemma 4"
+   ],
+   "repo": "https://github.com/divyansh2407/CampusMind-AI",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16825-945f-13bf-f6b7-54186b17b428",
+   "order": 29
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "DocuMend Ledger",
+   "team": "Rudrapratap Mishra, Shreshthi Pathak",
+   "tags": [
+    "Gemma 4"
+   ],
+   "demo": "https://radiant-torte-a02e45.netlify.app",
+   "repo": "https://github.com/Rudra-113/documend-frontend",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16826-2c59-7921-ce5b-e821155df9a6",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a16826-2c24-f2d6-6ac5-c00418be6ad9/01a16826-3afa-08c1-69a9-7eca54bcfdb9_24410c9101b9.jpg",
+   "order": 30
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "GENERIC_SAATHI",
+   "team": "Devansh Sharma",
+   "tags": [
+    "Gemma 4"
+   ],
+   "repo": "https://github.com/Dev027-ai/GENERIC_SAATHI",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16826-5017-fd5a-864a-852229315551",
+   "order": 31
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "OpenStudy AI",
+   "team": "Ambuj Yadav",
+   "tags": [
+    "Gemma 4"
+   ],
+   "repo": "https://github.com/kushal-kushwaha/OpenStudy-AI",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16828-21a9-dd07-0ae1-b0dd2283c9b9",
+   "order": 32
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Knowlix Ai",
+   "team": "Vipul Kumar Saini",
+   "tags": [
+    "Gemma 4"
+   ],
+   "repo": "https://github.com/shubhamyadav1102006-hub/knowlix-ai",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1682d-e654-9c86-acc1-fdd51dc62a93",
+   "order": 33
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "SWATANTRA AI: sovereign ai workbench",
+   "team": "Yusuf Habib",
+   "tags": [
+    "Open-source AI"
+   ],
+   "demo": "https://drive.google.com/drive/folders/1Gqt2kcTGJscPCnSKOBnOsSnFDiYMXMtL",
+   "demoLabel": "Files",
+   "repo": "https://github.com/retrospecs0801/swatantra",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a1682e-7194-3401-21e3-be52e16f1e06",
+   "image": "https://mlhusercontent.com/screenshots/projects/01a1682e-7126-2922-2155-9275e3bf2551/01a1682e-846b-57d7-6473-b71b605e0a5c_ce47f980b877.jpg",
+   "order": 34
+  },
+  {
+   "section": "hack-day-2026",
+   "title": "Studykit.ai",
+   "team": "Priya Chaturvedi, Riya Kumari",
+   "tags": [
+    "Open-source AI"
+   ],
+   "repo": "https://github.com/Rachit-suii/study-kit-ai",
+   "page": "https://www.mlh.com/events/hacktoberfest-hack-day-lucknow-x-bbditm/submissions/01a16832-26a5-a1ab-36d2-8f06efbf9882",
+   "order": 35
+  }
+ ]
+}

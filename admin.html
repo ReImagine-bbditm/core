@@ -46,6 +46,7 @@
    <button type="button" id="tab-events-btn" class="active" role="tab">Events</button>
    <button type="button" id="tab-alumni-btn" role="tab">Alumni</button>
    <button type="button" id="tab-gallery-btn" role="tab">Gallery</button>
+   <button type="button" id="tab-showcase-btn" role="tab">Showcase</button>
    <button type="button" id="tab-members-btn" role="tab" hidden>Members</button>
    <a href="./" class="adm-link">View site</a>
   </div>
@@ -93,7 +94,7 @@
       <textarea id="f-images" rows="4" placeholder="my-event/poster.jpg&#10;my-event/photo_01.jpg"></textarea>
      </label>
      <div class="wide">
-      <p class="adm-hint adm-hint-flush">Photos are not uploaded here. Add the image files to the website repo on GitHub inside <code>Site_ Images/Events_Images/</code>, then type each file's path below that folder, for example <code>2026-10-23_hack-day/poster.jpg</code>. A full <code>https://</code> link also works. The previews below show whether each path is found.</p>
+      <p class="adm-hint adm-hint-flush">Photos are not uploaded here. Add the image files to the website repo on GitHub inside <code>Site_Images/Events_Images/</code>, then type each file's path below that folder, for example <code>2026-10-23_hack-day/poster.jpg</code>. A full <code>https://</code> link also works. The previews below show whether each path is found.</p>
       <div id="f-img-preview" class="adm-thumbs"></div>
      </div>
     </div>
@@ -240,6 +241,109 @@
    <p id="gallery-count" class="adm-hint"></p>
    <p id="gallery-empty" class="adm-hint" hidden>No gallery photos yet.</p>
    <div id="gallery-list"></div>
+  </div>
+
+  <!-- SHOWCASE -->
+  <div id="tab-showcase" hidden>
+   <div id="showcase-import-card" class="adm-card" hidden>
+    <h2>Import the Hack Day showcase</h2>
+    <p>Nothing is saved yet. Import the Hack Day 2026 section and its 35 projects so you can manage them here.</p>
+    <button id="showcase-import-btn" type="button" class="btn btn-primary">Import showcase</button>
+    <p id="showcase-import-msg" class="adm-msg" role="status"></p>
+   </div>
+
+   <form id="ssec-form" class="adm-card" novalidate>
+    <h2 id="ssec-title">Add a section</h2>
+    <p class="adm-hint adm-hint-flush">A section is one event or theme on the Showcase page, for example "Hacktoberfest Hack Day 2026". Projects are added to a section below.</p>
+    <div class="adm-grid">
+     <label class="half">Section title
+      <input id="ss-title" type="text" maxlength="120" placeholder="e.g. Hacktoberfest Hack Day 2026">
+     </label>
+     <label>Order <span class="opt">(optional)</span>
+      <input id="ss-order" type="number" min="1" max="999" step="1" placeholder="1 = first">
+     </label>
+     <label>Visibility
+      <select id="ss-status"><option value="published">Published</option><option value="draft">Draft (hidden)</option></select>
+     </label>
+     <label class="wide">Short intro <span class="opt">(optional)</span>
+      <textarea id="ss-blurb" rows="3" maxlength="600" placeholder="One or two sentences about the event."></textarea>
+     </label>
+     <label class="half">Link <span class="opt">(optional, https://)</span>
+      <input id="ss-link" type="url" placeholder="https://...">
+     </label>
+     <label class="half">Link text <span class="opt">(optional)</span>
+      <input id="ss-linklabel" type="text" maxlength="40" placeholder="e.g. See the MLH submissions">
+     </label>
+    </div>
+    <div class="adm-actions">
+     <button id="ssec-save-btn" type="submit" class="btn btn-primary">Save section</button>
+     <button id="ssec-cancel" type="button" class="btn btn-secondary" hidden>Cancel editing</button>
+    </div>
+    <p id="ssec-msg" class="adm-msg" role="status"></p>
+   </form>
+   <div id="ssec-list"></div>
+
+   <form id="showcase-form" class="adm-card" novalidate>
+    <h2 id="sp-form-title">Add a project</h2>
+    <div class="adm-grid">
+     <label class="half">Section
+      <select id="sp-section"></select>
+     </label>
+     <label class="half">Project name
+      <input id="sp-title" type="text" maxlength="200" placeholder="e.g. Campus-Awaaz">
+     </label>
+     <label class="wide">Team <span class="opt">(names, separated by commas)</span>
+      <input id="sp-team" type="text" maxlength="400" placeholder="e.g. Asha Verma, Rohit Singh">
+     </label>
+     <label class="wide">Description <span class="opt">(optional, one or two sentences)</span>
+      <textarea id="sp-desc" rows="3" maxlength="1000"></textarea>
+     </label>
+     <label class="half">Tags <span class="opt">(optional, separated by commas; they become filter buttons)</span>
+      <input id="sp-tags" type="text" placeholder="e.g. Gemma 4, Open-source AI">
+     </label>
+     <label class="half">Award label <span class="opt">(optional, highlights the card)</span>
+      <input id="sp-award" type="text" maxlength="100" placeholder="e.g. Winner: Best Use of Gemma 4">
+     </label>
+     <label class="half">Demo link <span class="opt">(optional)</span>
+      <input id="sp-demo" type="url" placeholder="https://...">
+     </label>
+     <label>Demo button text <span class="opt">(optional)</span>
+      <input id="sp-demolabel" type="text" maxlength="40" placeholder="Demo">
+     </label>
+     <label class="half">Code link <span class="opt">(optional, GitHub)</span>
+      <input id="sp-repo" type="url" placeholder="https://github.com/...">
+     </label>
+     <label class="half">Details link <span class="opt">(optional, e.g. the MLH or Devpost page)</span>
+      <input id="sp-page" type="url" placeholder="https://...">
+     </label>
+     <label class="half">Screenshot <span class="opt">(optional, a path or an https:// link)</span>
+      <input id="sp-image" type="text" maxlength="300" placeholder="e.g. hack-day-2026/campus-awaaz.jpg">
+     </label>
+     <label>Order <span class="opt">(optional)</span>
+      <input id="sp-order" type="number" min="1" max="9999" step="1" placeholder="1 = first">
+     </label>
+     <label>Visibility
+      <select id="sp-status"><option value="published">Published</option><option value="draft">Draft (hidden)</option></select>
+     </label>
+     <div class="wide">
+      <p class="adm-hint adm-hint-flush">Screenshots are not uploaded here. Add the image to the website repo on GitHub inside <code>Site_Images/Showcase_Images/</code> and type its path below that folder, or paste a full <code>https://</code> link. Cards without a screenshot show the project's first letter.</p>
+      <div id="sp-preview" class="adm-thumbs"></div>
+     </div>
+    </div>
+    <div class="adm-actions">
+     <button id="sp-save-btn" type="submit" class="btn btn-primary">Save project</button>
+     <button id="sp-cancel" type="button" class="btn btn-secondary" hidden>Cancel editing</button>
+    </div>
+    <p id="sp-msg" class="adm-msg" role="status"></p>
+   </form>
+
+   <h2 class="adm-h2">All projects</h2>
+   <label class="adm-filter">Show
+    <select id="sp-filter"></select>
+   </label>
+   <p id="sp-count" class="adm-hint"></p>
+   <p id="sp-empty" class="adm-hint" hidden>No projects yet.</p>
+   <div id="sp-list"></div>
   </div>
 
   <!-- MEMBERS (admins only) -->

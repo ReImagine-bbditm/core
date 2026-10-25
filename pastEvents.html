@@ -8,6 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="Site_Images/logo.svg">
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="./Additions.css">
+<link rel="stylesheet" href="./nav-dropdown.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
    <script src="./app.js"></script>
@@ -19,15 +20,29 @@
   <div class="logo"><a href="./index.html">ReImagine</a></div>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
   <nav>
+  <!-- Paste in place of <ul id="nav-links"> ... </ul> on pastEvents.html and previousTeams.html -->
    <ul id="nav-links">
     <li><a href="./index.html#hero-section">Home</a></li>
     <li><a href="./index.html#About">About</a></li>
-    <!-- <li><a href="./index.html#Services">What we do</a></li> -->
-    <li><a href="./index.html#Events">Events</a></li>
-    <li><a href="./index.html#Team">Team</a></li>
+    <li class="has-sub">
+     <a href="./index.html#Events">Events</a>
+     <ul class="sub-menu">
+      <li><a href="./index.html#Events">Upcoming</a></li>
+      <li><a href="./pastEvents.html">Past events</a></li>
+      <li><a href="./showcase.html">Showcase</a></li>
+     </ul>
+    </li>
+    <li class="has-sub">
+     <a href="./index.html#Team">Team</a>
+     <ul class="sub-menu">
+      <li><a href="./index.html#Team">Current team</a></li>
+      <li><a href="./previousTeams.html">Alumni</a></li>
+     </ul>
+    </li>
     <li><a href="./index.html#Gallery">Gallery</a></li>
     <li><a href="./index.html#Contact">Join</a></li>
    </ul>
+
   </nav>
  </div>
 </header>
@@ -553,7 +568,6 @@
    <h4>Quick links</h4>
    <ul>
     <li><a href="./index.html#About">About</a></li>
-    <!-- <li><a href="./index.html#Services">What we do</a></li> -->
     <li><a href="./index.html#Events">Events</a></li>
     <li><a href="./index.html#Team">Team</a></li>
     <li><a href="./index.html#Contact">Join</a></li>
@@ -572,5 +586,6 @@
 </footer>
 
 <script type="module" src="./events.js"></script>
+<script src="./nav-dropdown.js" defer></script>
 </body>
 </html>
