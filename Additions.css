@@ -542,3 +542,5 @@ a.event-card:focus-visible{outline:2px solid var(--accent,#ff5a36);outline-offse
 @media (max-width: 600px) {
   [data-stars-reveal] { white-space: normal; text-wrap: balance; font-size: 1.25rem; }
 }
+a.item-value { color: inherit; text-decoration: none; }
+a.item-value:hover { text-decoration: underline; color: var(--accent); }

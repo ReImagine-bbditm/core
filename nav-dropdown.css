@@ -1,21 +1,10 @@
 /* Dropdown items in the top nav (Events, Team). Works with the existing header/nav markup. */
-#nav-links .has-sub { position: relative; display: flex; align-items: center; gap: .15rem; }
-#nav-links .sub-btn {
-  background: none; border: 0; color: inherit; font: inherit; cursor: pointer;
-  padding: .25rem .3rem; line-height: 1; border-radius: 6px;
-}
-#nav-links .sub-btn::before {
-  content: ""; display: block; width: .45em; height: .45em; margin-top: -.2em;
-  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
-  transform: rotate(45deg); transition: transform .2s ease;
-}
-#nav-links .sub-btn[aria-expanded="true"]::before { transform: rotate(-135deg); margin-top: .2em; }
-#nav-links .sub-btn:focus-visible { outline: 2px solid var(--accent, #ff5a36); outline-offset: 2px; }
+#nav-links .has-sub { position: relative; }
+#nav-links .sub-btn { display: none; } /* old chevron button, no longer used */
 
 #nav-links .sub-menu {
-  display: flex;
-  flex-direction: column;
   list-style: none; margin: 0; padding: .4rem;
+  display: flex; flex-direction: column; gap: 0;   /* vertical list, even if the nav's own styles make lists horizontal */
   position: absolute; top: 100%; left: 50%; min-width: 11rem; z-index: 50;
   transform: translate(-50%, 6px);
   background: var(--nav-sub-bg, #16161d);
@@ -24,28 +13,25 @@
   opacity: 0; visibility: hidden; pointer-events: none;
   transition: opacity .15s ease, transform .15s ease, visibility .15s;
 }
-#nav-links .sub-menu li { display: block; margin: 0; }
+#nav-links .sub-menu li { display: block; margin: 0; width: 100%; }
 #nav-links .sub-menu a {
   display: block; padding: .5rem .8rem; border-radius: 8px; white-space: nowrap;
   text-decoration: none; font-size: .95em;
 }
 #nav-links .sub-menu a:hover, #nav-links .sub-menu a:focus-visible { background: var(--accent-dim, rgba(255, 90, 54, .15)); }
 
-/* Open on hover (mouse), keyboard focus, or the chevron button (touch) */
+/* Open on mouse hover, keyboard focus, or a first tap on touch screens (see nav-dropdown.js) */
 @media (hover: hover) {
   #nav-links .has-sub:hover > .sub-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
 }
 #nav-links .has-sub:focus-within > .sub-menu,
 #nav-links .has-sub.open > .sub-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
 
-/* Phone menu: no floating panel, the sub-links sit indented under their parent when opened */
+/* Phone menu: no floating panel, the sub-links are always listed, indented under their parent */
 @media (max-width: 900px) {
-  #nav-links .has-sub { flex-wrap: wrap; justify-content: space-between; width: 100%; }
   #nav-links .sub-menu {
-    position: static; transform: none; min-width: 0; width: 100%;
+    position: static; transform: none !important; min-width: 0; width: 100%;
     background: transparent; border: 0; box-shadow: none; padding: 0 0 0 1rem;
-    display: none; opacity: 1; visibility: visible; pointer-events: auto;
+    opacity: 1; visibility: visible; pointer-events: auto;
   }
-  #nav-links .has-sub.open > .sub-menu { display: block; transform: none; }
-  #nav-links .has-sub:hover > .sub-menu, #nav-links .has-sub:focus-within > .sub-menu { transform: none; }
 }

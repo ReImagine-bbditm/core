@@ -1,29 +1,25 @@
-// Chevron buttons open and close the nav dropdowns (needed on touch screens, where there is no hover).
-// Escape or a click outside closes them. The parent link itself still works as a normal link.
+// Touch screens have no hover, so the first tap on "Events" or "Team" opens its dropdown and a second tap
+// follows the link. Mouse and keyboard need no script (the dropdown opens on hover and focus).
+// Escape or a tap elsewhere closes it. On phones the hamburger menu lists the sub-links, so nothing happens there.
 (function () {
   function init() {
     var items = document.querySelectorAll('#nav-links .has-sub');
     if (!items.length) return;
+    var touchWide = function () { return matchMedia('(hover: none)').matches && innerWidth > 900; };
     function closeAll(except) {
-      items.forEach(function (li) {
-        if (li === except) return;
-        li.classList.remove('open');
-        var b = li.querySelector('.sub-btn');
-        if (b) b.setAttribute('aria-expanded', 'false');
-      });
+      items.forEach(function (li) { if (li !== except) li.classList.remove('open'); });
     }
     items.forEach(function (li) {
-      var btn = li.querySelector('.sub-btn');
-      if (!btn) return;
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var open = !li.classList.contains('open');
+      var link = li.querySelector(':scope > a');
+      if (!link) return;
+      link.addEventListener('click', function (e) {
+        if (!touchWide() || li.classList.contains('open')) return;
+        e.preventDefault();
         closeAll(li);
-        li.classList.toggle('open', open);
-        btn.setAttribute('aria-expanded', String(open));
+        li.classList.add('open');
       });
     });
-    document.addEventListener('click', function () { closeAll(null); });
+    document.addEventListener('click', function (e) { if (!e.target.closest('#nav-links .has-sub')) closeAll(null); });
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       closeAll(null);
