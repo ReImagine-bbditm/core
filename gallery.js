@@ -20,7 +20,6 @@ async function loadFromDb() {
   if (!configured) return [];
   try {
     const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-    // Visitors may only read published photos (see firestore.rules), so ask for exactly those.
     const snap = await getDocs(query(collection(getFirestore(app), 'gallery'), where('status', '==', 'published')));
     return sortPhotos(snap.docs.map((d) => ({ id: d.id, ...d.data() })))
       .map((p) => ({ src: gallerySrc(p.image), alt: p.caption || '' }))

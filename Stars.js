@@ -1,9 +1,4 @@
-/* Hero particle story: thousands of glowing dots flow from word to picture to word
-   (Imagine, a bulb, Make, a hammer, Break, a broken bulb, ReImagine, the logo), tilting toward the cursor
-   and revealing the headline with a light sweep. The order is the SEQ list in the settings below.
-   Lives inside #hero-section only, pauses when scrolled out of view,
-   and lowers its own quality on slow devices.
-   Drop-in replacement: same element IDs as the previous hero scripts. */
+
 (function () {
   var c = document.getElementById('stars');
   var slot = document.getElementById('stars-slot');
@@ -12,30 +7,14 @@
   var root = document.documentElement;
   var hl = document.querySelector('[data-stars-reveal]');
 
-  /* ---------- settings ---------- */
-  // sequence of shapes; "sphere" and "torus" are 3D shapes, anything else is a word.
-  // The first word in the list is the intro word that triggers the headline reveal.
-  // Shapes: "sphere", "helix" (DNA), "cube" (wireframe tesseract) rotate in 3D;
-  // "logo" faces front; anything else is rendered as a word.
-  // Art-leaning sequence: each shape leads into a word that fits it.
-  //   orb -> What if?, galaxy -> Wonder, bloom -> Create, wave -> Express
-  // (helix and cube are still available: add 'helix' or 'cube' to SEQ for a techier feel)
-  //
-  // Current story: an idea (bulb) is made (hammer), then broken (broken bulb), and reimagined (the logo).
-  // Flat drawn shapes (they face front, like words): "logo", "bulb", "hammer", "broken".
+
   var SEQ = ['Imagine', 'bulb', 'Make', 'hammer', 'Break', 'broken', 'ReImagine', 'logo'];
-  // When this word has formed, the headline is revealed with the light sweep (here: after the story, with the name).
   var INTRO_WORD = 'ReImagine';
-  // Safety net: if the story has not reached INTRO_WORD by then (slow device, error), show the headline anyway.
   var REVEAL_FAILSAFE = 45;      // seconds
-  // The buttons (and anything else that should not wait for the story) appear this many seconds after the page loads,
-  // by adding the class "stars-buttons" to <html>. Set to 0 to show them immediately.
   var BUTTONS_AT = 1.5;          // seconds
-  // Shown still when the visitor prefers reduced motion (no animation)
   var STATIC_WORD = 'ReImagine';
   // white, cyan, blue, violet, then the two logo blues (dark wing, light wing)
   var COLORS = ['#ffffff', '#7df9ff', '#3d8bff', '#9b7bff', '#2f78d0', '#4db4ff', '#ff7ac8', '#ffb86b'];
-  // orbital rings around the 3D shapes (r = radius vs the sphere, tx/tz = tilt, dash = dotted ring)
   var RINGS = [
     { r: 1.32, tx: 1.25, tz: 0.35, speed: 0.55, sats: 2, a: 0.30, dash: false },
     { r: 1.52, tx: 0.55, tz: -0.65, speed: -0.35, sats: 1, a: 0.22, dash: true },
